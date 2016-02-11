@@ -2,12 +2,8 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
-    var guestCount = 0;
+    var guestCount = 2; //Set to 2 for Step. 4
     var selectedDish = [];
-
-    //TODO Lab 2 implement the data structure that will hold number of guest
-    // and selected dinner options for dinner menu
-
 
     this.setNumberOfGuests = function(num) {
         guestCount = num;
