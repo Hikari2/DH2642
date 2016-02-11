@@ -15,12 +15,17 @@ var DinnerModel = function() {
 
     // should return 
     this.getNumberOfGuests = function() {
-            //TODO Lab 2
+        return guestCount;
     }
 
     //Returns the dish that is on the menu for selected type 
     this.getSelectedDish = function(type) {
-            //TODO Lab 2
+        var result = [];
+        for (var dish in selectedDish){
+            if (dish = type)
+                result.push (dish);
+        }
+        return result;
     }
 
     //Returns all the dishes on the menu.
