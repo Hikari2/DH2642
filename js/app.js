@@ -1,12 +1,8 @@
-//ExampleView Object constructor
-var ExampleView = function (container) {
+$(function() {
+	//We instantiate our model
+	var model = new DinnerModel();
 	
-	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
-	this.numberOfGuests = container.find("#numberOfGuests");
-	this.plusButton = container.find("#plusGuest");
-	this.minusButton = container.find("#minusGuest");
-	
-	this.numberOfGuests.html("Hello World");
-	
-}
+	//And create the needed controllers and views
+	var exampleView = new ExampleView($("#exampleView"));
+
+});
