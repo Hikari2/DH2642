@@ -1,3 +1,7 @@
+
+var guestCount;
+var selectedDish = [];
+
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
@@ -6,7 +10,7 @@ var DinnerModel = function() {
 
 
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 2
+            guestCount = num;
 	}
 
 	// should return 
