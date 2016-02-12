@@ -2,7 +2,7 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
-    var guestCount = 2; //Set to 2 for Step. 4
+    var guestCount = 0;
     var selectedDish = [];
 
     this.setNumberOfGuests = function(num) {
@@ -16,12 +16,9 @@ var DinnerModel = function() {
 
     //Returns the dish that is on the menu for selected type 
     this.getSelectedDish = function(type) {
-        var result = [];
-        for (var dish in selectedDish){
+        for (var dish in selectedDish)
             if (dish = type)
-                result.push (dish);
-        }
-        return result;
+                return dish;
     }
 
     //Returns all the dishes on the menu.
