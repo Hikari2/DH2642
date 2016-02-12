@@ -2,7 +2,7 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
     var guestCount = 0;
-    var selectedDish = [];
+    var menu = [];
 
     this.setNumberOfGuests = function(num) {
         guestCount = num;
@@ -15,7 +15,7 @@ var DinnerModel = function() {
 
     //Returns the dish that is on the menu for selected type 
     this.getSelectedDish = function(type) {
-        for (var dish in selectedDish)
+        for (var dish in menu)
             if (dish = type)
                 return dish;
     }
@@ -56,7 +56,20 @@ var DinnerModel = function() {
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function(id) {
-            //TODO Lab 2 
+           document.write ("Adding dish")
+                var present = false;
+                for (dish in menu) {
+                         if (menu[dish].Category == data.Category) {
+                         menu.pop(menu[dish]);
+                         menu.push(data);
+                         present = true;
+                         document.write ("Item already present")
+            }
+        }
+        if (!present) {
+            menu.push(data);
+            document.write ("Dish added")
+            document.write (menu)
     }
 
     //Removes dish from menu
