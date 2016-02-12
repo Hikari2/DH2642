@@ -6,12 +6,30 @@
 }
 
 #view_3{
-    padding:20px 20px 20px 20px;
+    padding:0px 0px 0px 0px;
+}
+
+#view_3 #top{
+    padding:10px 10px 10px 10px;
+    background-color:#F2F2F2;
     border:solid;
 }
 
 #view_3 #bot{
     overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+#view_3 button {
+    background-color: orange;
+    color:black;
+    padding:5px 5px 5px 5px;
+    font-size: 100%; 
+}
+
+#view_3 select{
+    margin-left: 50%;
+    width: 230px;
 }
 
 hr{

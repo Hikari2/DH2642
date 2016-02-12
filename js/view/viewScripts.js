@@ -24,7 +24,7 @@ var View_2 = function (container, model) {
   	// and/or ones that responed to interaction)
         this.totalCost = container.find("#totalCost");
 
-	this.totalCost.html(model.getNumberOfGuests());
+	this.totalCost.html(model.getTotalMenuPrice());
 }
 
 
