@@ -1,7 +1,6 @@
 
 //DinnerModel Object constructor
 var DinnerModel = function() {
- 
     var guestCount = 0;
     var selectedDish = [];
 
@@ -28,16 +27,16 @@ var DinnerModel = function() {
 
     //Returns all ingredients for all the dishes on the menu.
     this.getAllIngredients = function() {
-            var ingredients = [];
-                for (dish in menu) {
-                    if (category == undefined) {
-                for (var i = 0; i < menu[dish].Ingredients.length; i++) {
-                    ingredients.push(menu[dish].Ingredients[i]);
-                }
+        var ingredients = [];
+        for (dish in menu) {
+            if (category == undefined) {
+            for (var i = 0; i < menu[dish].Ingredients.length; i++) {
+                ingredients.push(menu[dish].Ingredients[i]);
             }
-                if (menu[dish].Category == category) {
-                     for (var i = 0; i < menu[dish].Ingredients.length; i++) {
-                            ingredients.push(menu[dish].Ingredients[i]);
+        }
+            if (menu[dish].Category == category) {
+                 for (var i = 0; i < menu[dish].Ingredients.length; i++) {
+                     ingredients.push(menu[dish].Ingredients[i]);
                 }
             }
         }
@@ -70,18 +69,18 @@ var DinnerModel = function() {
     //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function (type,filter) {
       return $(dishes).filter(function(index,dish) {
-            var found = true;
+          var found = true;
             if(filter){
-                    found = false;
-                    $.each(dish.ingredients,function(index,ingredient) {
-                            if(ingredient.name.indexOf(filter)!=-1) {
-                                    found = true;
-                            }
-                    });
-                    if(dish.name.indexOf(filter) != -1)
-                    {
-                            found = true;
+                found = false;
+                $.each(dish.ingredients,function(index,ingredient) {
+                    if(ingredient.name.indexOf(filter)!=-1) {
+                        found = true;
                     }
+                });
+                if(dish.name.indexOf(filter) != -1)
+                {
+                    found = true;
+                }
             }
             return dish.type == type && found;
       });	
@@ -89,11 +88,11 @@ var DinnerModel = function() {
 
     //function that returns a dish of specific ID
     this.getDish = function (id) {
-      for(key in dishes){
-                    if(dishes[key].id == id) {
-                            return dishes[key];
-                    }
+        for(key in dishes){
+            if(dishes[key].id == id) {
+                return dishes[key];
             }
+        }
     }
 
 
