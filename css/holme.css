@@ -1,0 +1,18 @@
+
+body{
+    background-image: url("../images/homeBackGround.jpg");
+    background-repeat: no-repeat;
+    
+}
+
+.banner{
+    margin:0px auto;
+    padding:0;
+    height:10%;
+    width:100%;
+    overflow:hidden;
+    border:solid;
+    background-color:#d8d8d8;
+    border-color:grey;
+    border-width:0px 0px 5px 0px;
+}
