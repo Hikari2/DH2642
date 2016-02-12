@@ -1,7 +1,13 @@
 
-body{
+#view_1{
+    position:absolute;
+    z-index: -100;
+    left: 0;
+    top: 0;
+    height:100%;
+    width:100%;
     background-image: url("../images/homeBackGround.jpg");
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
 }
 
 #box{
