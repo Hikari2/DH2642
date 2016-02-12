@@ -1,18 +1,56 @@
 
 body{
     background-image: url("../images/homeBackGround.jpg");
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat
 }
 
-.banner{
+#box{
+    position:absolute;
+    left: 0;
+    bottom: 20%;
+    opacity:0.8;
     margin:0px auto;
-    padding:0;
-    height:10%;
-    width:100%;
+    padding:20px 20px 20px 30px;
+    height:40%;
+    width:40%;
     overflow:hidden;
-    border:solid;
-    background-color:#d8d8d8;
-    border-color:grey;
-    border-width:0px 0px 5px 0px;
+    background-color:#F2F2F2;
+}
+
+#box h1{
+    font-size: 300%; 
+    padding-top: 0px;
+    padding-right: 30px;
+    color: black;
+}
+
+#box p{
+    font-size:150%;
+    padding-top: 10px;
+    color: black;
+}
+
+#box p.big{
+    font-size: 300%; 
+    font-weight: bold;
+    float: left; 
+    padding-top: 0px;
+    padding-right: 30px;
+}
+
+#box hr{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+#box button {
+    background-color: orange;
+    color:black;
+    padding:10px 10px 10px 10px;
+    font-size: 200%; 
 }

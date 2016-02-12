@@ -1,0 +1,29 @@
+body{
+    background-image: url("../images/homeBackGround.jpg");
+    background-repeat: no-repeat
+}
+
+header{
+    opacity: 0.7;
+    margin:0px auto;
+    padding:40px 10px 40px 40px;
+    height:10%;
+    width:100%;
+    overflow:hidden;
+    border:solid;
+    border-color:black;
+    border-width:5px 5px 5px 5px;
+}
+
+header p{
+    font-size: 200%;
+    padding-top: 40px;
+    color: black;
+}
+
+header p.big{
+    font-size: 450%; 
+    float: left; 
+    padding-top: 0px;
+    padding-right: 30px;
+}
