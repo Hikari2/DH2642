@@ -1,28 +1,30 @@
 header{
     z-index: 100;
     opacity: 0.9;
-    margin:0px auto;
     padding:40px 10px 40px 40px;
-    height:10%;
-    width:100%;
+    height:20vh;
+    width:100vw;
     overflow:hidden;
-    border:solid;
     background-color:#F2F2F2;
     border-color:black;
-    border-width:2px 2px 2px 2px;
+    border:solid;
 }
 
 header p{
-    font-size: 200%;
-    padding-top: 40px;
+    font-size: 3vh;
     color: black;
+    font-style: italic;
+    float: left; 
+    
+    margin:5vh 0vw 0vh 3vw
 }
 
 header p.big{
-    font-size: 450%; 
+    font-size: 8vh; 
     font-weight: bold;
+    font-style: initial;
     float: left; 
-    padding-top: 0px;
-    padding-right: 30px;
+    
+    margin:0vh 0vw 0vh 0vw
 }
 

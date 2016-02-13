@@ -24,24 +24,16 @@
 }
 
 #box h1{
-    font-size: 300%; 
+    font-size: 3vw; 
     padding-top: 0px;
     padding-right: 30px;
     color: black;
 }
 
 #box p{
-    font-size:150%;
+    font-size: 1vw;
     padding-top: 10px;
     color: black;
-}
-
-#box p.big{
-    font-size: 300%; 
-    font-weight: bold;
-    float: left; 
-    padding-top: 0px;
-    padding-right: 30px;
 }
 
 #box hr{
@@ -58,5 +50,5 @@
     background-color: orange;
     color:black;
     padding:10px 10px 10px 10px;
-    font-size: 200%; 
+    font-size: 1vw; 
 }

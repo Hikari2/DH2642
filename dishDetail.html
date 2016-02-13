@@ -8,7 +8,8 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-        <link href="css/view_6.css" rel="stylesheet" type="text/css"/>
+        <link href="css/view_2.css" rel="stylesheet" type="text/css"/>
+        <link href="css/view_4.css" rel="stylesheet" type="text/css"/>
         <link href="css/header.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -18,8 +19,24 @@
         </header> 
         <div class="container">
             <div class="row">
-                <div id="view_6" class="col-md-9">
-                    <h1>View 6</h1>
+                <div id="view_2" class="col-md-3">
+                    <h1>My Dinner</h1>
+                    <p>People
+                        <input type="number" name="numberOfGuests" value="1" min="1" max="5" onchange="alert('hello');">
+                    </p>
+                    <table class="table" id="menuTable">
+                        <tr>
+                            <th>Dish Name</th>
+                            <th>Cost</th>
+                        </tr>
+                    </table>
+                    <hr>
+                    <p>SEK <span id="totalCost"></span></p>
+                    <button id="confirmButton" type="button" class="btn btn-default">Confirm Dinner</button>
+
+                </div>
+                <div id="view_4" class="col-md-9">
+                    <h1>View 4</h1>
                 </div>
             </div>
         </div>

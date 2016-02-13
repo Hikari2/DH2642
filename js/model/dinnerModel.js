@@ -1,7 +1,6 @@
-
 //DinnerModel Object constructor
 var DinnerModel = function() {
-    var guestCount = 0;
+    var guestCount = 1;
     var menu = [];
 
     this.setNumberOfGuests = function(num) {
@@ -27,54 +26,60 @@ var DinnerModel = function() {
 
     //Returns all ingredients for all the dishes on the menu.
     this.getAllIngredients = function() {
-        var ingredients = [];
-        for (dish in menu) {
-            if (category == undefined) {
-            for (var i = 0; i < menu[dish].Ingredients.length; i++) {
-                ingredients.push(menu[dish].Ingredients[i]);
-            }
-        }
-            if (menu[dish].Category == category) {
-                 for (var i = 0; i < menu[dish].Ingredients.length; i++) {
-                     ingredients.push(menu[dish].Ingredients[i]);
-                }
-            }
-        }
-        return ingredients;     //Returns nothing when no item exists
+        var result = [];
+        for (var i = 0; i < menu.length; i++) 
+            for (var j = 0; j < menu[i].ingredients.length; j++) 
+                result.push(menu[i].ingredients[j]);
+ 
+        return result; 
     }
 
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
     this.getTotalMenuPrice = function() {
-            var tPrice = 0;
-            var ingredients = this.getAllIngredients(category);
-                for (var dish = 0; dish < ingredients.length; dish++) {
-                    tPrice += ingredients[dish].Quantity;
+        var tPrice = 0;
+        var ingredients = this.getAllIngredients();
+            for (var i = 0; i < ingredients.length; i++){
+                tPrice += ingredients[i].price;
         }
-        return (parseFloat(tPrice).toFixed(2) * numberOfGuests);  
+        return (tPrice * guestCount);  
+    }
+    
+    this.getDishPrice = function(id) {
+        var cost = 0;
+        var dish = this.getDish(id);
+        
+        for (var j = 0; j < dish.ingredients.length; j++)
+            cost += (dish.ingredients[j].price);
+        return cost;
     }
 
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function(id) {
-           document.write ("Adding dish")
-                var present = false;
-                for (dish in menu) {
-                         if (menu[dish].Category == data.Category) {
-                         menu.pop(menu[dish]);
-                         menu.push(data);
-                         present = true;
-                         document.write ("Item already present")
+        var type;
+        var newDish;
+        
+        for (var i = 0; i < dishes.length; i++){
+            if (dishes[i].id == id){ 
+                type = dishes[i].type;
+                newDish = dishes[i];
             }
         }
-        if (!present) {
-            menu.push(data);
-            document.write ("Dish added")
-            document.write (menu)
+        
+        for (var j = 0; j < menu.length; j++){
+            if(menu[j].type == type)
+                menu.splice(j, 1);
+        }
+        menu.push(newDish);
     }
 
     //Removes dish from menu
     this.removeDishFromMenu = function(id) {
-             menu.pop(dishes[id]);
+        for (var i = 0; i < menu.length; i++) { 
+            dish = menu[i];
+            if (dish.id == id) 
+                menu.splice(i, 1);
+        }
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -98,14 +103,12 @@ var DinnerModel = function() {
             return dish.type == type && found;
       });	
     }
-
+    
     //function that returns a dish of specific ID
     this.getDish = function (id) {
-        for(key in dishes){
-            if(dishes[key].id == id) {
-                return dishes[key];
-            }
-        }
+        for (var i = 0; i < dishes.length; i++)
+            if (dishes[i].id == id)
+                return dishes[i];
     }
 
 
@@ -318,6 +321,182 @@ var DinnerModel = function() {
                     },{
                     'name':'ingredient 3',
                     'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':104,
+            'name':'MD 5',
+            'type':'main dish',
+            'image':'bakedbrie.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':105,
+            'name':'MD 6',
+            'type':'main dish',
+            'image':'meatballs.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':106,
+            'name':'MD 7',
+            'type':'main dish',
+            'image':'bakedbrie.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':107,
+            'name':'MD 8',
+            'type':'main dish',
+            'image':'bakedbrie.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':108,
+            'name':'MD 9',
+            'type':'main dish',
+            'image':'bakedbrie.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':109,
+            'name':'MD 10',
+            'type':'main dish',
+            'image':'bakedbrie.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':1,
+                    'unit':'pieces',
+                    'price':4
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':12,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':6,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':110,
+            'name':'MD 11',
+            'type':'main dish',
+            'image':'meatballs.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':2,
+                    'unit':'pieces',
+                    'price':8
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':10,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':5,
+                    'unit':'ml',
+                    'price':4
+                    }]
+            },{
+            'id':111,
+            'name':'MD 12',
+            'type':'main dish',
+            'image':'meatballs.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ingredient 1',
+                    'quantity':2,
+                    'unit':'pieces',
+                    'price':8
+                    },{
+                    'name':'ingredient 2',
+                    'quantity':10,
+                    'unit':'g',
+                    'price':7
+                    },{
+                    'name':'ingredient 3',
+                    'quantity':5,
                     'unit':'ml',
                     'price':4
                     }]
