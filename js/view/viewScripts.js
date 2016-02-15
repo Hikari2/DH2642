@@ -20,25 +20,32 @@ var View_2 = function (container, model) {
     model.addDishToMenu(100);
     model.addDishToMenu(202);
     model.addDishToMenu(201);
+    
+    this.guestCounter = container.find("#guestCounter");
+    
+    this.update = function () {
+        var menu = model.getFullMenu();
 
-    var menu = model.getFullMenu();
+        var table = document.getElementById("menuTable");
+        table.innerHTML = "";
+        
+        for (i = 0; i < menu.length; i++) {
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
 
-    var table = document.getElementById("menuTable");
+            var c1 = row.insertCell(0);
+            c1.innerHTML = menu[i].name;
 
-    for (i = 0; i < menu.length; i++) {
-        var rowCount = table.rows.length;
-        var row = table.insertRow(rowCount);
+            var c2 = row.insertCell(1);
+            c2.innerHTML = model.getDishPrice(menu[i].id);
+        }
 
-        var c1 = row.insertCell(0);
-        c1.innerHTML = menu[i].name;
+        this.totalCost = container.find("#totalCost");
 
-        var c2 = row.insertCell(1);
-        c2.innerHTML = model.getDishPrice(menu[i].id);
-    }
-
-    this.totalCost = container.find("#totalCost");
-
-    this.totalCost.html(model.getTotalMenuPrice());
+        this.totalCost.html(model.getTotalMenuPrice());
+    };
+    
+    this.update();
 }
 
 var View_3 = function (container, model) {
@@ -135,7 +142,7 @@ var View_5 = function (container, model) {
 }
 
 var View_6 = function (container, model) {
-this.backButton = container.find("#goBackAndEditDinner");
+    this.backButton = container.find("#goBackAndEditDinner");
 
     this.update = function (result) {
         container.find("#totalGuests").html(model.getNumberOfGuests());

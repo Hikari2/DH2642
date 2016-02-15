@@ -22,7 +22,7 @@
                 <div id="view_2" class="col-md-3">
                     <h1>My Dinner</h1>
                     <p>People
-                        <input type="number" name="numberOfGuests" value="1" min="1" max="5" onchange="alert('hello');">
+                        <input id="guestCounter" type="number" name="numberOfGuests" value="1" min="1" max="5">
                     </p>
                     <table class="table" id="menuTable">
                         <tr>
@@ -71,6 +71,7 @@
         <script src="js/app.js"></script>
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/viewScripts.js"></script>
+        <script src="js/controller/viewController.js"></script>
         <script src="js/view/exampleViewController.js"></script>
     </body>
 </html>
