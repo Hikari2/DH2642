@@ -65,3 +65,75 @@ var View_3 = function (container, model) {
         grid.appendChild(column);
     }
 }
+
+var View_4 = function (container, model) {
+    this.backButton = container.find("#backToSelectDish");
+    this.confirmbutton = container.find("#confirmDish");
+    this.dishDetailsView = container.find("#dishDetailsView");
+
+    this.update = function (result) {
+
+        if (result != undefined) {
+            var iUrl = "";
+
+            iUrl = "images/" + dishes[i].image;
+
+            $("#dishDetail").html(result.Title + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + result.Instructions + "</p>");
+
+            var string = "";
+            var ingredients = result.Ingredients;
+
+            for (var i = 0; i < ingredients.length; i++) {
+                string = string + (parseFloat(ingredients[i].Quantity).toFixed(2) + " " + ingredients[i].MetricUnit + " " + ingredients[i].Name + "<font style='position:absolute; right:11px;'>SEK " + parseFloat(ingredients[i].Quantity).toFixed(2) + "</font><br>");
+            }
+
+            var tPrice = 0;
+
+            $("#dishRecipe").html(string);
+
+            for (var i = 0; i < ingredients.length; i++) {
+                tPrice += ingredients[i].Quantity;
+            }
+        }
+        $("#dishPrice").html("<font style='float:right;'>SEK " + parseFloat(totalCost).toFixed(2) + "</font>");
+
+    }
+}
+
+var View_5 = function (container, model) {
+    this.backButton = container.find("#goBackAndEditDinner");
+    this.confirmbutton = container.find("#printFullRecipe");
+
+    this.update = function (result) {
+
+        var item = model.getSelectedDish('Starters');
+        if (item != undefined) {
+            container.find("#appPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
+            container.find("#appTitle").html(item.Title.substring(0, 20) + "...");
+        }
+
+        item = model.getSelectedDish('Main Dish');
+        if (item != undefined) {
+            container.find("#mainPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
+            container.find("#mainTitle").html(item.Title.substring(0, 20) + "...");
+        }
+
+        item = model.getSelectedDish('Desserts');
+        if (item != undefined) {
+            container.find("#desPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
+            container.find("#desTitle").html(item.Title.substring(0, 20) + "...");
+        }
+
+        container.find("#totalGuests").html(model.getNumberOfGuests());
+
+        container.find("#starSum").html(model.getTotalMenuPrice('Starters'));
+        container.find("#mainSum").html(model.getTotalMenuPrice('Main Dish'));
+        container.find("#desSum").html(model.getTotalMenuPrice('Desserts'));
+
+        container.find("#tPrice").html(model.getTotalMenuPrice());
+    }
+}
+
+var View_6 = function (container, model) {
+
+}
