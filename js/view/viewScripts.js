@@ -25,9 +25,9 @@ var View_2 = function (container, model) {
     
     this.update = function () {
         var menu = model.getFullMenu();
-
+        
         var table = document.getElementById("menuTable");
-        table.innerHTML = "";
+        table.innerHTML = " <tr><th>Dish Name</th><th>Cost</th></tr>";
         
         for (i = 0; i < menu.length; i++) {
             var rowCount = table.rows.length;
