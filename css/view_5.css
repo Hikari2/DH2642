@@ -23,14 +23,15 @@ body{
 
 #view_5 #top {
 	width: 100%;
-    height: 20%;
+        height: 20%;
 	background-color:#FFFDD0;
 	padding: 10px 10px 10px 10px;
+        border: solid;
 }
 
 #view_5 #mid {
 	width: 100%;
-    height: 50%;
+        height: 50%;
 }
 
 #view_5 #mid p{
@@ -45,7 +46,7 @@ body{
 
 #view_5 #bot {
 	width: 100%;
-    height: 30%;
+        height: 30%;
 	padding: 20px 10px 10px 10px;
 }
 
@@ -91,7 +92,6 @@ body{
     border-width: 1px;
     width: 70%
 }
-
 
 
 

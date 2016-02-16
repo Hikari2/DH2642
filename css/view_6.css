@@ -15,26 +15,33 @@ body{
     margin: 0px 0px 0px 0px;
 }
 
-#view_6 td{
-	padding-left: 50px;
-	padding-top: 50px;
-	vertical-align: top;
+#view_6 {
+    width: 100%;
+    height: 100%;
+    border: solid;
+       
 }
 
-#view_6 td img{
-	margin-top: 40px;
+#view_6 #top {
+	width: 100%;
+	height: 30%;
+	padding: 0px 0px 0px 0px;
+	background-color: #FFFDD0;
+	border: solid;
 }
 
-#view_6 td:nth-child(2){
-	width: 80%;
+
+#view_6 #top button {
+    background-color: orange;
+    color:black;
+    padding: 10px 10px 5px 10px;
+    margin-top: 20px;
+    font-size: 1vw;
+    float: right
 }
 
-#view_6 td:nth-child(3){
-	max-width: 50%;
-	padding-right: 50px;
-}
 
-hr{
+#view_6 #bot hr{
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -42,4 +49,5 @@ hr{
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    width: 70%
 }
