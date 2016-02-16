@@ -62,7 +62,7 @@ var View_3 = function (container, model) {
         
     for (i = 0; i < dishes.length; i++) {
         var column = document.createElement("div");
-        column.className = "col-md-2";
+        column.className = "col-md-4";
 
         var image = document.createElement("IMG");
         image.src = "images/" + dishes[i].image;
