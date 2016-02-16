@@ -17,19 +17,34 @@
             <p>From the best chefs in the world directly into your kitchen</p>
         </header> 
         <div class="container">
-            <div class="row">
-                <div id="view_5" class="col-md-9">
-                    <h2>My Dinner: <span></span></h2>
-                    <button>Go back and edit dinner</button>
-                </div>
-        <div id="overview">
-                <div id="selected-menu" class="container">
-                </div>
-                <hr>
-                    <div id="print-recipe">
-                    <button id="print-recipe-button">Print Full Recipe</button>
+            <div id="view_5">
+                <div id="top" class="row">
+                    <div class="col-md-3">
+                        <h2>My Dinner: <span id="numberOfGuest"></span> people</h2>
                     </div>
-        </div>
+                    <div class="col-md-9">
+                        <button>Go back and edit dinner</button>
+                    </div>
+                </div>
+                <div id="mid" class="row">
+                    <div class="col-md-3">
+                        <div id="appPic"></div>
+                        <div id="appName"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="mainPic"></div>
+                        <div id="mainName"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="desPic"></div>
+                        <div id="desName"></div>
+                    </div>
+                    <hr class="vertical">
+                </div>
+                <div id="bot" class="row">
+                    <hr>
+                    <button id="print-recipe-button">Print Full Recipe</button>
+                </div>
             </div>
         </div>
 

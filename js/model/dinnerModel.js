@@ -1,5 +1,5 @@
 //DinnerModel Object constructor
-var DinnerModel = function() {
+vaDinnerModel = function() {
     var guestCount = 1;
     var menu = [];
 
@@ -14,9 +14,9 @@ var DinnerModel = function() {
 
     //Returns the dish that is on the menu for selected type 
     this.getSelectedDish = function(type) {
-        for (var dish in menu)
-            if (dish = type)
-                return dish;
+            for (var i = 0; i < menu.length; i++)
+                if (menu[i].type == type)
+                    return dish;
     }
 
     //Returns all the dishes on the menu.
@@ -538,5 +538,4 @@ var DinnerModel = function() {
                     }]
             }
     ];
-
 }

@@ -108,10 +108,10 @@ var View_4 = function (container, model) {
 }
 
 var View_5 = function (container, model) {
-    this.backButton = container.find("#goBackAndEditDinner");
-    this.confirmbutton = container.find("#printFullRecipe");
+    //this.backButton = container.find("#goBackAndEditDinner");
+    //this.confirmbutton = container.find("#printFullRecipe");
 
-    this.update = function (result) {
+    this.update = function () {
 
         var dish = model.getSelectedDish('Starters');
         if (dish != undefined) {
@@ -130,7 +130,7 @@ var View_5 = function (container, model) {
             container.find("#desPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
             container.find("#desName").html(item.Title.substring(0, 20) + "...");
         }
-
+        /*
         container.find("#totalGuests").html(model.getNumberOfGuests());
 
         container.find("#starSum").html(model.getTotalMenuPrice('Starters'));
@@ -138,7 +138,10 @@ var View_5 = function (container, model) {
         container.find("#desSum").html(model.getTotalMenuPrice('Desserts'));
 
         container.find("#tPrice").html(model.getTotalMenuPrice());
+        */
     }
+
+    this.update();
 }
 
 var View_6 = function (container, model) {
