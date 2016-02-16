@@ -22,7 +22,7 @@
                 <div id="view_2" class="col-md-3">
                     <h1>My Dinner</h1>
                     <p>People
-                        <input type="number" name="numberOfGuests" value="1" min="1" max="5">
+                        <input id="guestCounter" type="number" name="numberOfGuests" value="1" min="1" max="5">
                     </p>
                     <table class="table" id="menuTable">
                         <tr>
@@ -33,38 +33,31 @@
                     <hr>
                     <p>SEK <span id="totalCost"></span></p>
                     <button id="confirmButton" type="button" class="btn btn-default">Confirm Dinner</button>
-
                 </div>
-                <div id="view_4" class="col-md-9">
-                    <div id="content">
-                        <div id="dish-mid">
-                            <div id="mid-left">
-                                <h2 id="dish-headline"></h2>
-                                <img>
-                                <p id="dish-description">
-                                    Lorem ipsum dolor sit amet, pri eu insolens corrumpit. Mea an quem saperet consequat, at sit soleat postulant iracundia, quo putent efficiendi eu. Summo ridens epicuri ad mea, ei clita utroque propriae ius, mei ei animal nostrum. Te altera tritani repudiare est.
-                                </p>
+                <div id="view_4" class="col-md-7">
+            
+                            <div id="main">
+                                <h1 id="dishName"></h1>
+                                <div id="dishDetail"></div>
                                 <button>back to Select Dish</button>
                                 <h2>Preparation</h2>
                                 <p id="dish-instructions"></p>
+                                
                             </div>
-
-                            <div id="mid-right">
-                                <h3>Ingredients for _ people</h3>
-                                <hr>
-                                <table id="ingredient-list">
+                            <div id="box">
+                                <h2>Ingredients for <span id="totalGuests"></span> people</h2>
+                                
+                                <table id="ingredient-list" class="table">
                                 </table>
-                                <hr>
-                                <table id="dish-summary">
+                                
+                                <table id="dish-summary" class="table">
                                     <tr>    
                                         <td><button>Confirm Dish</button></td>
-                                        <td><p>&nbsp&nbspSEK</p></td>
-                                        <td><p id="dish-cost"></p></td>
+                                        <td><p id="dishPrice"></p></td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -78,6 +71,6 @@
         <script src="js/app.js"></script>
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/viewScripts.js"></script>
-        <script src="js/view/exampleViewController.js"></script>
+        <script src="js/controller/viewController.js"></script>
     </body>
 </html>

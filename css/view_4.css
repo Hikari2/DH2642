@@ -14,56 +14,43 @@ body{
     width: 100%;
     height: 100%;
     margin: 0px 0px 0px 0px;
+    
 }
 
 #view_4 {
-    width:100%;
-}
-
-#view_4_left {
-    width:50%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-#view_4 img {
-    width: 100%;
-}
-
-
-#view_4_right {
-    width: 80px;
-    position: absolute;
-    top:150px;
-    background-color:#ccc;
-    padding-left: 2%;
-    padding-right: 2%;
-    right: 0;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-#view_4 table tr td {
-    background-color:#ccc;
+    width:80%;
+        height: 100%;
+        border: solid;
+            overflow-y:scroll;
+    overflow-x:hidden;
 }
 
 #view_4 button {
-    margin-bottom: 5%;
+    background-color: orange;
+    color:black;
+    padding:10px 10px 10px 10px;
+    font-size: 1vw; 
 }
 
-#view_4_summary td:nth-child(1){
-    width:82%;
+#view_4 #main{
+    width: 50%;
+    height: 70%;
+        float:left;
 }
 
-.price-text {
-    color: red;
+#view_4 #box{
+    width: 50%;
+        height: 70%;
+        border: solid;
+        
+        float:right;
+            background-color:#FFFDD0;
+                padding:20px 20px 20px 20px;
 }
 
-.dish-list .price-text {
-    color: red;
-    text-align: right;
+#view_4 font{
+    float:left;
 }
-
 
 hr{
     display: block;
@@ -73,5 +60,6 @@ hr{
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    width: 70%;
 }
 

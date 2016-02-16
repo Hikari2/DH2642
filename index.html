@@ -8,8 +8,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-        <link href="css/view_2.css" rel="stylesheet" type="text/css"/>
-        <link href="css/view_3.css" rel="stylesheet" type="text/css"/>
+        <link href="css/view_6.css" rel="stylesheet" type="text/css"/>
         <link href="css/header.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -19,48 +18,19 @@
         </header> 
         <div class="container">
             <div class="row">
-                <div id="view_2" class="col-md-3">
-                    <h1>My Dinner</h1>
-                    <p>People
-                        <input id="guestCounter" type="number" name="numberOfGuests" value="1" min="1" max="5">
-                    </p>
-                    <table class="table" id="menuTable">
-                        <tr>
-                            <th>Dish Name</th>
-                            <th>Cost</th>
-                        </tr>
-                    </table>
-                    <hr>
-                    <p>SEK <span id="totalCost"></span></p>
-                    <button id="confirmButton" type="button" class="btn btn-default">Confirm Dinner</button>
-                </div>
-                <div id="view_3" class="col-md-9">
-                    <div id="top">
-                        <h1>SELECT DISH</h1>
-                        <hr>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="searchField" placeholder="Enter key words">
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option value="Main">Main
-                                    <option value="Appertizer">Appetizer
-                                    <option value="Dessert">Dessert
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="bot">
-                        <div class="row" id="grid">
-
+                <div id="view_6" class="col-md-9">
+                    <div id="preparation-content">
+                        <div id="overview-headline">
+                         <h2>My Dinner: <span></span></h2>
+                         <button>Go back and edit dinner</button>
                         </div>
-                    </div>  
-                </div>
+        
+                        <table> 
+                        </table>
+                    </div>
+                 </div>
             </div>
         </div>
-
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery.js"></script>
         <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
@@ -71,6 +41,5 @@
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/viewScripts.js"></script>
         <script src="js/controller/viewController.js"></script>
-        <script src="js/view/exampleViewController.js"></script>
     </body>
 </html>

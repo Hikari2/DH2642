@@ -20,7 +20,7 @@
             <div id="view_5">
                 <div id="top" class="row">
                     <div class="col-md-3">
-                        <h2>My Dinner: <span id="numberOfGuest"></span> people</h2>
+                        <h2>My Dinner: <span id="totalGuests"></span> people</h2>
                     </div>
                     <div class="col-md-9">
                         <button>Go back and edit dinner</button>
@@ -30,16 +30,21 @@
                     <div class="col-md-3">
                         <div id="appPic"></div>
                         <div id="appName"></div>
+                        <p><span id="starSum"></span> SEK</p>
                     </div>
                     <div class="col-md-3">
                         <div id="mainPic"></div>
                         <div id="mainName"></div>
+                        <p><span id="mainSum"></span> SEK</p>
                     </div>
                     <div class="col-md-3">
                         <div id="desPic"></div>
                         <div id="desName"></div>
+                        <p><span id="desSum"></span> SEK</p>
                     </div>
                     <hr class="vertical">
+                    <h2>Total</h2>
+                    <p><span id="totalCost"></span> SEK</p>
                 </div>
                 <div id="bot" class="row">
                     <hr>
@@ -57,6 +62,6 @@
         <script src="js/app.js"></script>
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/viewScripts.js"></script>
-        <script src="js/view/exampleViewController.js"></script>
+        <script src="js/controller/viewController.js"></script>
     </body>
 </html>

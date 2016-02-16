@@ -27,6 +27,10 @@ var View_2 = function (container, model) {
         var menu = model.getFullMenu();
         
         var table = document.getElementById("menuTable");
+        
+        if (table == undefined)
+            return;
+        
         table.innerHTML = " <tr><th>Dish Name</th><th>Cost</th></tr>";
         
         for (i = 0; i < menu.length; i++) {
@@ -52,7 +56,10 @@ var View_3 = function (container, model) {
 
     var dishes = model.getAllDishes("main dish");
     var grid = document.getElementById("grid");
-
+    
+    if (grid == undefined)
+        return;
+        
     for (i = 0; i < dishes.length; i++) {
         var column = document.createElement("div");
         column.className = "col-md-2";
@@ -74,37 +81,61 @@ var View_3 = function (container, model) {
 }
 
 var View_4 = function (container, model) {
-    this.backButton = container.find("#backToSelectDish");
-    this.confirmbutton = container.find("#confirmDish");
-    this.dishDetailsView = container.find("#dishDetailsView");
+    //this.backButton = container.find("#backToSelectDish");
+    //this.confirmbutton = container.find("#confirmDish");
+    //this.dishDetailsView = container.find("#dishDetailsView");
 
-    this.update = function (result) {
+    this.update = function (dishID) {
+        
+        var dish = model.getDish(dishID);
+        
+        if (dish == undefined) 
+            return;
 
-        if (result != undefined) {
-            var iUrl = "";
-
-            iUrl = "images/" + dishes[i].image;
-
-            $("#dishDetail").html(result.Title + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + result.Instructions + "</p>");
-
+            var iUrl = "images/" + dish.image;
+            
+            $("#dishDetail").html("<h1>"+dish.name+"</h1>" + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
+/*
             var string = "";
-            var ingredients = result.Ingredients;
+            var ingredients = dish.ingredients;
 
             for (var i = 0; i < ingredients.length; i++) {
-                string = string + (parseFloat(ingredients[i].Quantity).toFixed(2) + " " + ingredients[i].MetricUnit + " " + ingredients[i].Name + "<font style='position:absolute; right:11px;'>SEK " + parseFloat(ingredients[i].Quantity).toFixed(2) + "</font><br>");
+                string = string + (parseFloat(ingredients[i].quantity).toFixed(2) + "" + ingredients[i].unit + "" + ingredients[i].name + "SEK " + parseFloat(ingredients[i].price).toFixed(2) + "</font><br>");
             }
+            */
+           var table = document.getElementById("ingredient-list");
+        
+        if (table == undefined)
+            return;
+        
+        table.innerHTML = "";
+        var ingredients = dish.ingredients;
+        
+        for (i = 0; i < ingredients.length; i++) {
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
 
-            var tPrice = 0;
+            var c1 = row.insertCell(0);
+            c1.innerHTML = ingredients[i].quantity + " " + ingredients[i].unit;
 
-            $("#dishRecipe").html(string);
-
-            for (var i = 0; i < ingredients.length; i++) {
-                tPrice += ingredients[i].Quantity;
-            }
+            var c2 = row.insertCell(1);
+            c2.innerHTML = ingredients[i].name;
+            
+            var c3 = row.insertCell(2);
+            c3.innerHTML = "SEK ";
+            
+            var c4 = row.insertCell(3);
+            c4.innerHTML = ingredients[i].price;
+            
         }
-        $("#dishPrice").html("<font style='float:right;'>SEK " + parseFloat(totalCost).toFixed(2) + "</font>");
-
+            
+            
+            //$("#ingredient-list").html(string);
+        
+        $("#dishPrice").html("<font style='float:right;'>SEK " + parseFloat(model.getDishPrice(dish.id)).toFixed(2) + "</font>");
+        container.find("#totalGuests").html(model.getNumberOfGuests());
     }
+    this.update(1);
 }
 
 var View_5 = function (container, model) {
@@ -112,33 +143,35 @@ var View_5 = function (container, model) {
     //this.confirmbutton = container.find("#printFullRecipe");
 
     this.update = function () {
-
-        var dish = model.getSelectedDish('Starters');
+        var dish = model.getSelectedDish('starter');
         if (dish != undefined) {
-            container.find("#appPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
-            container.find("#appName").html(item.Title.substring(0, 20) + "...");
+            container.find("#appPic").html("<img src='" + "images/" + dish.image + "' height='150' width='150'>");
+            container.find("#appName").html(dish.name.substring(0, 20));
         }
 
-        dish = model.getSelectedDish('Main Dish');
+        dish = model.getSelectedDish('main dish');
         if (dish != undefined) {
-            container.find("#mainPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
-            container.find("#mainName").html(item.Title.substring(0, 20) + "...");
+            container.find("#mainPic").html("<img src='" + "images/" + dish.image + "' height='150' width='150'>");
+            container.find("#mainName").html(dish.name.substring(0, 20));
         }
 
-        dish = model.getSelectedDish('Desserts');
+        dish = model.getSelectedDish('dessert');
         if (dish != undefined) {
-            container.find("#desPic").html("<img src='" + item.ImageURL + "' height='150' width='150'>");
-            container.find("#desName").html(item.Title.substring(0, 20) + "...");
+            container.find("#desPic").html("<img src='" + "images/" + dish.image + "' height='150' width='150'>");
+            container.find("#desName").html(dish.name.substring(0, 20));
         }
-        /*
+        
         container.find("#totalGuests").html(model.getNumberOfGuests());
-
-        container.find("#starSum").html(model.getTotalMenuPrice('Starters'));
-        container.find("#mainSum").html(model.getTotalMenuPrice('Main Dish'));
-        container.find("#desSum").html(model.getTotalMenuPrice('Desserts'));
-
-        container.find("#tPrice").html(model.getTotalMenuPrice());
-        */
+        
+        var starter = model.getSelectedDish('starter');
+        var main = model.getSelectedDish('main dish');
+        var desert = model.getSelectedDish('dessert');
+        
+        container.find("#starSum").html(model.getDishPrice(starter.id));
+        container.find("#mainSum").html(model.getDishPrice(main.id));
+        container.find("#desSum").html(model.getDishPrice(desert.id));
+        
+        container.find("#totalCost").html(model.getTotalMenuPrice());
     }
 
     this.update();
