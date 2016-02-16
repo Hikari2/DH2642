@@ -14,14 +14,14 @@ body{
     width: 100%;
     height: 100%;
     margin: 0px 0px 0px 0px;
-    
+
 }
 
 #view_4 {
     width:80%;
-        height: 100%;
-        border: solid;
-            overflow-y:scroll;
+    height: 100%;
+    border: solid;
+    overflow-y:scroll;
     overflow-x:hidden;
 }
 
@@ -29,37 +29,34 @@ body{
     background-color: orange;
     color:black;
     padding:10px 10px 10px 10px;
-    font-size: 1vw; 
+    font-size: 1vw;
+}
+
+#view_4 button {
+    margin:30px 30px 30px 30px;
+}
+
+#view_4 #box button {
+    margin:0px 0px 0px 0px;
+    padding:5px 5px 5px 5px;
 }
 
 #view_4 #main{
     width: 50%;
     height: 70%;
-        float:left;
+    float:left;
+    padding:20px 20px 20px 20px;
 }
 
 #view_4 #box{
     width: 50%;
-        height: 70%;
-        border: solid;
-        
-        float:right;
-            background-color:#FFFDD0;
-                padding:20px 20px 20px 20px;
+    height: 70%;
+    border: solid;
+    float:right;
+    background-color:#FFFDD0;
+    margin-top: 2%;
 }
 
-#view_4 font{
-    float:left;
+#view_4 h1{
+    font-weight: bold;
 }
-
-hr{
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-    width: 70%;
-}
-

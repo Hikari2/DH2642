@@ -7,7 +7,7 @@ var DinnerModel = function() {
         guestCount = num;
     }
 
-    // should return 
+    // should return fl
     this.getNumberOfGuests = function() {
         return guestCount;
     }
