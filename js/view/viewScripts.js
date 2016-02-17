@@ -183,29 +183,27 @@ var View_5 = function (container, model) {
 var View_6 = function (container, model) {
     this.backButton = container.find("#goBackAndEditDinner");
 
-    this.update = function (result) {
-        container.find("#totalGuests").html(model.getNumberOfGuests());
-
-        var menu = model.getFullMenu();
+    
+       var menu = model.getFullMenu();
         for (dish in menu) {
-            if (menu[dish].Category == 'Starters') {
-                container.find("#starPic1").html("<img src='" + menu[dish].ImageURL + "'height='150' width='150'>");
-                container.find("#starName1").html(menu[dish].Title);
+            if (menu[dish].Category == 'starter') {
+                container.find("#starPic1").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
+                container.find("#starName1").html(menu[dish].name);
+                //document.write(Preparation);
                 container.find("#starPrep1").html("Preparation");
-                container.find("#starDesc1").html(menu[dish].Description);
+                container.find("#starDesc1").html(menu[dish].description);
             }
-            if (menu[dish].Category == 'Main Dish') {
-                container.find("#mainPic2").html("<img src='" + menu[dish].ImageURL + "'height='150' width='150'>");
-                container.find("#mainName2").html(menu[dish].Title);
+            if (menu[dish].Category == 'main dish') {
+                container.find("#mainPic2").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
+                container.find("#mainName2").html(menu[dish].name);
                 container.find("#mainPrep2").html("Preparation");
-                container.find("#mainDesc2").html(menu[dish].Description);
+                container.find("#mainDesc2").html(menu[dish].description);
             }
-            if (menu[dish].Category == 'Desserts') {
-                container.find("#desPic3").html("<img src='" + menu[dish].ImageURL + "'height='150' width='150'>");
-                container.find("#desName3").html(menu[dish].Title);
+            if (menu[dish].Category == 'dessert') {
+                container.find("#desPic3").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
+                container.find("#desName3").html(menu[dish].name);
                 container.find("#desPrep3").html("Preparation");
-                container.find("#desDesc3").html(menu[dish].Description);
+                container.find("#desDesc3").html(menu[dish].description);
             }
         }
-    }
 }
