@@ -1,108 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-        <link href="css/view_6.css" rel="stylesheet" type="text/css"/>
-        <link href="css/header.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <header>
-            <p id= "top" class="big">HOMELETTE</p>
-            <p>From the best chefs in the world directly into your kitchen</p>
-        </header> 
-       
-        <div class="container">
-            <div class="row">
-                <div id="view_6" class="col-md-9">
-                    <div id="preparation-content">
-                      
-                        
-        <div id="top" class="row">
-                    <div class="col-md-3">
-                        <h2>My Dinner: <span id="totalGuests">1</span> people</h2>
-                    </div>
-                    <div class="col-md-9">
-                        <button>Go back and edit dinner</button>
-                    </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link href="css/view_1.css" rel="stylesheet" type="text/css"/>
+    <link href="css/header.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header>
+        <p class="big">HOMELETTE</p>
+        <p>From the best chefs in the world directly into your kitchen</p>
+    </header> 
+    <div id="view_1">
+        <div id="box">
+            <h1>A Home Dinner Service</h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>start quickly</p>
+            <button id="newDinnerButton" type="button" class="btn btn-default">Create new dinner</button>
         </div>
-                       
-                        
-                        
-                <table class="table" style="width:100%">
-                    <tr>
-                        <td><div id="starPic1" >
-                           </div></td>
-                        <td><div id="starName1" >
-                           </div>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.  </p>   
-                        </td> 
-                        <td><div id="starPrep1" >
-                            </div>
-                            <div id="starDesc1" >
-                            </div></td>              
-                    </tr>
-                    
-                    <tr>
-                        <td><div id="mainPic2" >
-                           </div></td>
-                        <td>
-                            <div id="mainName2" >
-                           </div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.  </p>   
-                        </td> 
-                        <td><div id="mainPrep2" >
-                            </div>
-                            <div id="mainDesc2" >
-                            </div></td>              
-                    </tr>
-                    
-                    <tr>
-                        <td><div id="desPic3" >
-                           </div></td>
-                        <td><div id="desName3" >
-                           </div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.  </p>   
-                        </td> 
-                        <td><div id="desPrep3" >
-                            </div>
-                            <div id="desDesc3" >
-                            </div></td>              
-                    </tr>
-                    
-                </table>
-                        
-                     
-               
-                          
-                      
-                    </div>
-                 </div>
-            </div>
-        </div>
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    </div>
 
-        <!-- The application JavaScript code -->
-        <script src="js/app.js"></script>
-        <script src="js/model/dinnerModel.js"></script>
-        <script src="js/view/viewScripts.js"></script>
-        <script src="js/controller/viewController.js"></script>
-    </body>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/viewScripts.js"></script>
+	<script src="js/view/exampleViewController.js"></script>
+  </body>
 </html>
