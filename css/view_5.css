@@ -80,6 +80,7 @@ body{
     border-width: 1px;
     height: 70%;
     width: 0px;
+    align-content: space-between;
 }
 
 #view_5 #bot hr{
