@@ -15,8 +15,8 @@ var View_1 = function (container, model) {
 }
 
 var View_2 = function (container, model) {
-    model.addDishToMenu(1);
     model.addDishToMenu(2);
+    model.addDishToMenu(1);
     model.addDishToMenu(100);
     model.addDishToMenu(202);
     model.addDishToMenu(201);
