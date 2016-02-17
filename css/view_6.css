@@ -40,71 +40,105 @@ body{
 }
 
 #view_6 #starPic1 img{
-    font-size: 2vh;
     border:solid;
-    width: 15%;
+    width: 100%;
     margin-left: 25px;
     margin-top: 25px;
 }
 
 #view_6 #mainPic2 img{
-    font-size: 2vh;
     border:solid;
-    width: 15%;
+    width: 100%;
     margin-left: 25px;
     margin-top: 25px;
 }
 
 #view_6 #desPic3 img{
-    font-size: 2vh;
     border:solid;
-    width: 15%;
+    width: 100%;
     margin-left: 25px;
     margin-top: 25px;
 }
 
 #view_6 #starName1{
    font-size: 3vh;
-   width: 10%;
+   width: 50%;
    font-weight: bold;
-    margin-left: 25px;
+    margin-left: 100px;
+    margin-top: 20px;
  
 }
 
 #view_6 #mainName2{
  font-size: 3vh;
- width: 10%;
- font-weight: bold;
- margin-left: 25px;
+   width: 50%;
+   font-weight: bold;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 #view_6 #desName3{
     font-size: 3vh;
-    width: 10%;
-    font-weight: bold;
-    margin-left: 25px;
+   width: 50%;
+   font-weight: bold;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 #view_6 #starPrep1{
     font-size: 2vh;
-    width: 10%;
+    width: 100%;
     font-weight: bold;
-    float: right;   
+    margin-top: 25px;
+    margin-left: 150px;
 }
 
 #view_6 #mainPrep2{
     font-size: 2vh;
-    width: 10%;
+    width: 100%;
     font-weight: bold;
-    float: right; 
+    margin-top: 25px;
+    margin-left: 150px;
 }
 
 #view_6 #desPrep3{
     font-size: 2vh;
-    width: 10%;
+    width: 100%;
     font-weight: bold;
-    float: right;
+    margin-top: 25px;
+    margin-left: 150px;
 }
+
+#view_6 #starDesc1{
+    font-size: 2vh;
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+#view_6 #mainDesc2{
+    font-size: 2vh;
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+#view_6 #desDesc3{
+    font-size: 2vh;
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+#view_6 table p{
+    margin-left: 100px;
+    margin-top: 20px; 
+}
+
+#view_6 table td{
+    width: 1%;
+}
+
 #view_6 #bot hr{
     display: block;
     margin-top: 0.5em;
