@@ -18,17 +18,16 @@ body{
 #view_6 {
     width: 100%;
     height: 100%;
-    border: solid;
     padding: 0px 0px 0px 0px;
-       
+
 }
 
 #view_6 #top {
-	width: 100%;
-	height: 30%;
-	padding: 10px 10px 40px 10px;
-	background-color: #FFFDD0;
-	border: solid;
+    width: 100%;
+    height: 30%;
+    padding: 10px 10px 40px 10px;
+    background-color: #FFFDD0;
+    border: solid;
 }
 
 
