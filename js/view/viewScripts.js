@@ -181,29 +181,32 @@ var View_5 = function (container, model) {
 }
 
 var View_6 = function (container, model) {
-    this.backButton = container.find("#goBackAndEditDinner");
-
-    
+    this.update = function (){
+        
        var menu = model.getFullMenu();
-        for (dish in menu) {
-            if (menu[dish].Category == 'starter') {
-                container.find("#starPic1").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
-                container.find("#starName1").html(menu[dish].name);
+        for (var i = 0; i < menu.length; i++) {
+            //alert("Hello");
+            if (menu[i].type == 'starter') {
+                container.find("#starPic1").html("<img src='" + "images/" + menu[i].image + "' height='150' width='150'>");
+                container.find("#starName1").html(menu[i].name);
                 //document.write(Preparation);
                 container.find("#starPrep1").html("Preparation");
-                container.find("#starDesc1").html(menu[dish].description);
+                container.find("#starDesc1").html(menu[i].description);
             }
-            if (menu[dish].Category == 'main dish') {
-                container.find("#mainPic2").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
-                container.find("#mainName2").html(menu[dish].name);
+            if (menu[i].type == 'main dish') {
+                container.find("#mainPic2").html("<img src='" + "images/" + menu[i].image + "' height='150' width='150'>");
+                container.find("#mainName2").html(menu[i].name);
                 container.find("#mainPrep2").html("Preparation");
-                container.find("#mainDesc2").html(menu[dish].description);
+                container.find("#mainDesc2").html(menu[i].description);
             }
-            if (menu[dish].Category == 'dessert') {
-                container.find("#desPic3").html("<img src='" + menu[dish].ImageURL + "'height='20' width='20'>");
-                container.find("#desName3").html(menu[dish].name);
+            if (menu[i].type == 'dessert') {
+                container.find("#desPic3").html("<img src='" + "images/" + menu[i].image + "' height='150' width='150'>");
+                container.find("#desName3").html(menu[i].name);
                 container.find("#desPrep3").html("Preparation");
-                container.find("#desDesc3").html(menu[dish].description);
+                container.find("#desDesc3").html(menu[i].description);
             }
         }
+}
+            this.update();
+
 }
