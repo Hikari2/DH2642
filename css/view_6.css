@@ -39,6 +39,29 @@ body{
     float: right
 }
 
+#view_6 #starPic1 img{
+    font-size: 2vh;
+    border:solid;
+    width: 15%;
+       margin-left: 25px;
+       margin-top: 25px;
+}
+
+#view_6 #mainPic2 img{
+    font-size: 2vh;
+    border:solid;
+    width: 15%;
+       margin-left: 25px;
+       margin-top: 25px;
+}
+
+#view_6 #desPic3 img{
+    font-size: 2vh;
+    border:solid;
+    width: 15%;
+       margin-left: 25px;
+       margin-top: 25px;
+}
 
 #view_6 #bot hr{
     display: block;
