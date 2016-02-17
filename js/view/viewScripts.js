@@ -95,7 +95,7 @@ var View_4 = function (container, model) {
         var iUrl = "images/" + dish.image;
 
         $("#dishDetail").html("<h1>" + dish.name + "</h1>" + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
-
+        $("#dish-instructions").html(dish.description);
         var table = document.getElementById("ingredient-list");
 
         if (table == undefined)
@@ -189,7 +189,6 @@ var View_6 = function (container, model) {
             if (menu[i].type == 'starter') {
                 container.find("#starPic1").html("<img src='" + "images/" + menu[i].image + "' height='150' width='150'>");
                 container.find("#starName1").html(menu[i].name);
-                //document.write(Preparation);
                 container.find("#starPrep1").html("Preparation");
                 container.find("#starDesc1").html(menu[i].description);
             }
