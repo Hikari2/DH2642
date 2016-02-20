@@ -2,7 +2,7 @@ $(function () {
     //We instantiate our model
     var model = new DinnerModel();
 
-    var view_1 = new View_2($("#view_1"), model);
+    var view_1 = new View_1($("#view_1"), model);
     var view_2 = new View_2($("#view_2"), model);
     var view_3 = new View_3($("#view_3"), model);
     var view_4 = new View_4($("#view_4"), model);

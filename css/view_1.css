@@ -6,11 +6,11 @@
     top: 0;
     height:100%;
     width:100%;
-    background-image: url("../images/homeBackGround.jpg");
+    background-image: url("../images/home.jpg");
     background-repeat: no-repeat;
 }
 
-#box{
+#view_1 #box{
     position:absolute;
     left: 0;
     bottom: 20%;
@@ -23,20 +23,20 @@
     background-color:#F2F2F2;
 }
 
-#box h1{
+#view_1 #box h1{
     font-size: 3vw; 
     padding-top: 0px;
     padding-right: 30px;
     color: black;
 }
 
-#box p{
+#view_1 #box p{
     font-size: 1vw;
     padding-top: 10px;
     color: black;
 }
 
-#box hr{
+#view_1 #box hr{
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -46,7 +46,7 @@
     border-width: 1px;
 }
 
-#box button {
+#view_1 #box button {
     background-color: orange;
     color:black;
     padding:10px 10px 10px 10px;

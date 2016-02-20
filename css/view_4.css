@@ -1,26 +1,7 @@
 
-body{
-    width: 100vw;
-    height: 100vh;
-}
-
-.container{
-    width: 100%;
-    height: 80%;
-    padding: 0px 0px 0px 0px;
-}
-
-.row{
-    width: 100%;
-    height: 100%;
-    margin: 0px 0px 0px 0px;
-
-}
-
 #view_4 {
     width:80%;
     height: 100%;
-    border: solid;
     overflow-y:scroll;
     overflow-x:hidden;
 }
@@ -59,4 +40,37 @@ body{
 
 #view_4 h1{
     font-weight: bold;
+}
+
+@media screen and (max-width:  1120px) {
+
+    #view_4 {
+        padding-left: 15%;
+    }
+
+    #view_4 #box{
+        width: 100%;
+        height: 100%;
+    }
+
+    #view_4 button {
+        font-size: 1vw;
+    }
+}
+
+
+@media screen and (max-width:  960px) {
+
+    #view_4 {
+        padding-left: 15%;
+    }
+
+    #view_4 #box{
+        width: 100%;
+        height: 100%;
+    }
+
+    #view_4 button {
+        font-size: 2vw;
+    }
 }

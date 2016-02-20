@@ -1,6 +1,14 @@
+
 body{
-    width: 100vw;
-    height: 100vh;
+    background-color: #D3D3D3;
+}
+
+#main{
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
 }
 
 .container{
@@ -18,17 +26,15 @@ body{
 #view_6 {
     width: 100%;
     height: 100%;
-    padding: 0px 0px 0px 0px;
 }
 
 #view_6 #top {
     width: 100%;
-    height: 30%;
-    padding: 10px 10px 40px 10px;
+    height: 10%;
+    padding: 20px 10px 40px 10px;
     background-color: #FFFDD0;
-    border: solid;
+    white-space: nowrap;
 }
-
 
 #view_6 #top button {
     background-color: orange;
@@ -39,113 +45,38 @@ body{
     float: right
 }
 
-#view_6 #starPic1 img{
-    border:solid;
-    width: 70%;
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-#view_6 #mainPic2 img{
-    border:solid;
-    width: 70%;
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-#view_6 #desPic3 img{
-    border:solid;
-    width: 70%;
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-#view_6 #starName1{
-   font-size: 3vh;
-   width: 50%;
-   font-weight: bold;
-    margin-left: 100px;
-    margin-top: 20px;
- 
-}
-
-#view_6 #mainName2{
- font-size: 3vh;
-   width: 50%;
-   font-weight: bold;
-    margin-left: 100px;
-    margin-top: 20px;
-}
-
-#view_6 #desName3{
-    font-size: 3vh;
-   width: 50%;
-   font-weight: bold;
-    margin-left: 100px;
-    margin-top: 20px;
-}
-
-#view_6 #starPrep1{
-    font-size: 2vh;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-left: 150px;
-}
-
-#view_6 #mainPrep2{
-    font-size: 2vh;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-left: 150px;
-}
-
-#view_6 #desPrep3{
-    font-size: 2vh;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-left: 150px;
-}
-
-#view_6 #starDesc1{
-    font-size: 2vh;
-    width: 50%;
-    margin-left: 150px;
-    margin-top: 10px;
-}
-
-#view_6 #mainDesc2{
-    font-size: 2vh;
-    width: 50%;
-    margin-left: 150px;
-    margin-top: 10px;
-}
-
-#view_6 #desDesc3{
-    font-size: 2vh;
-    width: 50%;
-    margin-left: 150px;
-    margin-top: 10px;
-}
-
-#view_6 table p{
-    margin-left: 100px;
-    margin-top: 20px; 
-}
-
 #view_6 table td{
     width: 1%;
 }
 
-#view_6 #bot hr{
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-    width: 70%
+#view_6 img{
+    border:solid;
+    width: 80%;
+    height: 90%;
+    margin: 10px 10px 10px 10px;
+}
+
+#view_6 h1{
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+#view_6 p{
+    font-size: 1vw;
+    margin: 0px 0px 0px 0px;
+}
+
+@media screen and (max-width: 1020px) {
+
+    #view_6 #top {
+        padding: 10px 10px 10px 10px;
+    }
+
+    #view_6 #top button {
+        font-size: 1.5vw;
+    }
+
+    #view_6 #top h2{
+        font-size: 2.5vw;
+    }
 }
