@@ -7,27 +7,24 @@
 var View_3 = function (container, model) {
 
     var dishes = model.getAllDishes("main dish");
-    var grid = document.getElementById("grid");
 
-    if (grid == undefined)
-        return;
+    var i = 0;
+    var row;
 
-    for (i = 0; i < dishes.length; i++) {
-        var column = document.createElement("div");
-        column.className = "col-md-4";
+    while (true) {
+        row = "<tr>";
+        for (var j = 0; j < 5; j++) {
+            if (dishes[i*5+j] == undefined) {
+                row += "</tr>";
+                $('#view_3 #dishTable').append(row);
+                return;
+            }
+            row += "<td><img src = images/" + dishes[i*5+j].image + ">";
+            row += "<p>" + dishes[i*5+j].name + "</p>";
 
-        var image = document.createElement("IMG");
-        image.src = "images/" + dishes[i].image;
-        column.appendChild(image);
-
-        var name = document.createElement("p");
-        name.innerHTML = dishes[i].name;
-        column.appendChild(name);
-
-        var description = document.createElement("span");
-        description.innerHTML = "Lorem ipsum dolor sit omet, consectetur odipiscing elit, sed do siusmod tempor incididunt ut labore et dolore";
-        column.appendChild(description);
-
-        grid.appendChild(column);
+        }
+        row += "</tr>";
+        $('#view_3 #dishTable').append(row);
+        i++;
     }
 }

@@ -536,6 +536,18 @@ var DinnerModel = function() {
                     'unit':'ml',
                     'price':6
                     }]
+            },{
+            'id':203,
+            'name':'Strawberry2',
+            'type':'dessert',
+            'image':'icecream.jpg',
+            'description':"Here is how you make it... Lore ipsum...",
+            'ingredients':[{ 
+                    'name':'ice cream',
+                    'quantity':100,
+                    'unit':'ml',
+                    'price':6
+                    }]
             }
     ];
 }

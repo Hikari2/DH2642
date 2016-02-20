@@ -48,29 +48,63 @@
 
 #view_3 #bot{
     overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-x:scroll;
     height: 80%;
+    padding:20px 20px 20px 20px;
 }
 
-#view_3 .col-md-4{
+#view_3 .col-md-6{
     font-size: 1.5vh;
     padding:5% 5% 5% 5%;
     width: 20%;
     height: 70%;
 }
 
-#view_3 .col-md-4 img{
+#view_3 #dishTable img{
     font-size: 2vh;
     border:solid;
     width: 100%;
 }
 
-#view_3 .col-md-4 p{
+#view_3 #dishTable p{
     font-size: 2vh;
     background-color:#ccc;
     width: 100%;
 }
 
-#view_3 .col-md-4 span{
-    width: 100%;
+
+@media screen and (max-width: 1120px) {
+
+    #view_3 h3{
+        font-size: 2vw;
+    }
+
+    #view_3 {
+        font-size: 2vw;
+        padding-left: 7%;
+    }
+
+    #view_3 .col-md-6{
+        font-size: 1vh;
+        padding:5% 5% 5% 5%;
+        width: 70%;
+        height: 70%;
+        margin: 0 0 0 0;
+    }
+
+    #view_3 .col-md-6 img{
+        border:solid;
+        width: 100%;
+    }
+
+    #view_3 .col-md-6 p{
+        font-size: 3vh;
+        background-color:#ccc;
+        width: 100%;
+    }
+
+    #view_3 .col-md-6 span{
+        font-size: 2vh;
+        width: 100%;
+    }
 }
