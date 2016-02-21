@@ -68,13 +68,13 @@
 }
 
 #view_3 #dishTable img{
-    width: 100%;
+    width: 80%;
     height: 80%;
     padding:2% 2% 2% 2%;
 }
 
 #view_3 #dishTable p{
-    width: 100%;
+    width: 80%;
     height: 20%;
     font-size: 1vw;
     background-color:#ccc;
@@ -113,7 +113,7 @@
     }
 
     #view_3 #dishTable p{
-        width: 100%;
+        width: 80%;
         height: 20%;
         font-size: 2vh;
         background-color:#ccc;
