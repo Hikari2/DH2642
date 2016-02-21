@@ -24,18 +24,31 @@ header p.big{
     font-weight: bold;
     font-style: initial;
     float: left;
-    margin:0vh 0vw 0vh 0vw
+    margin:0vh 0vw 0vh 0vw;
 }
 
 @media screen and (max-width: 1260px) {
 
-    header p{
+    header p{   
         font-size: 2vw;
-        margin:0vh 0vw 0vh 0vw
+        margin:0vh 0vw 0vh 0vw;
     }
 
     header p.big{
         font-size: 6vw;
+        float: none;
+    }
+}
+
+@media screen and (max-height: 680px) {
+
+    header p{   
+        font-size: 3vh;
+        margin:0vh 0vw 0vh 0vw;
+    }
+
+    header p.big{
+        font-size: 8vh;
         float: none;
     }
 }

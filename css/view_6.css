@@ -5,8 +5,7 @@ body{
 }
 
 #main{
-    width: 80%;
-    height: 100%;
+    width: 80vw;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -26,7 +25,7 @@ body{
 
 #view_6 {
     width: 100%;
-    height: 100%;
+    height: 100%;    
 }
 
 #view_6 #top {
@@ -67,7 +66,7 @@ body{
     margin: 0px 0px 0px 0px;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1460px) {
 
     #view_6 #top {
         padding: 10px 10px 10px 10px;
@@ -82,16 +81,11 @@ body{
     }
 
     #main{
-        width: 100%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
+        width: 95%;
     }
 
     #view_6 p{
         font-size: 1.5vw;
         margin: 0px 0px 0px 0px;
     }
-
 }

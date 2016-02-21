@@ -37,10 +37,6 @@ var View_2 = function (container, model) {
         this.totalCost.html(model.getTotalMenuPrice());
     };
 
-    this.hide = function () {
-        $("#view_2").hide();
-    };
-
     this.update();
 }
 

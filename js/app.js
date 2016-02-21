@@ -9,8 +9,9 @@ $(function () {
     var view_5 = new View_5($("#view_5"), model);
     var view_6 = new View_6($("#view_6"), model);
 
-    $("#view_2").hide();
-    $("#view_3").hide();
+    $("#view_1").hide();
+    $("#view_2").show();
+    $("#view_3").show();
     $("#view_4").hide();
     $("#view_5").hide();
     $("#view_6").hide();

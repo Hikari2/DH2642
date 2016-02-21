@@ -1,9 +1,8 @@
 
 #view_2{
-    padding:20px 20px 20px 20px;
     width: 20%;
     height: 100%;
-    white-space: nowrap;
+    padding:20px 20px 20px 20px;
 }
 
 #view_2 th{
@@ -26,33 +25,14 @@ hr{
     border-style: inset;
     border-width: 1px;
 }
-@media screen and (max-width: 1120px) {
-    #view_2 {
-        font-size: 2vw;
-        white-space: normal;
-    }
 
+@media screen and (max-width: 1180px) {
+    
+    #view_2{
+        font-size: 1vw;
+    }
+    
     #view_2 h1{
-        font-size: 2vw;
-    }
-
-    #view_2 button {
-        font-size: 2vw;
-    }
-}
-
-@media screen and (max-width:  960px) {
-
-    #view_2 {
-        font-size: 2vw;
-        white-space: normal;
-    }
-
-    #view_2 h1{
-        font-size: 2vw;
-    }
-
-    #view_2 button {
         font-size: 2vw;
     }
 }

@@ -1,8 +1,8 @@
 
 #view_3{
-    padding:0px 0px 0px 0px;
     width: 80%;
     height: 100%;
+    padding: 0px 0px 0px 0px;
 }
 
 #view_3 #top{
@@ -46,42 +46,49 @@
 }
 
 #view_3 #bot{
-    overflow-y:scroll;
-    overflow-x:scroll;
     height: 80%;
+    padding: 20px 20px 20px 20px;
+}
+
+#view_3 #dishTable{
+    width: 100%;
+    height: 100%;
     padding:20px 20px 20px 20px;
 }
 
-#view_3 #dishTable .col{
-    max-width: 10vw;
+#view_3 td{
+    width: 33%;
+    height: 33%;
+    margin: 20px 20px 20px 20px;
+    padding: 30px 30px 20px 20px;
+}
+
+#view_3 .col{
+    margin:25px 25px 25px 25px;
 }
 
 #view_3 #dishTable img{
-    font-size: 2vh;
     width: 100%;
-    height: 100%;
+    height: 80%;
     padding:2% 2% 2% 2%;
 }
 
 #view_3 #dishTable p{
+    width: 100%;
+    height: 20%;
     font-size: 2vh;
     background-color:#ccc;
-    width: 100%;
 }
-
 
 @media screen and (max-width: 1280px) {
 
     #view_3 h3{
         font-size: 2vw;
     }
-
-    #view_3 {
-        font-size: 2vw;
-        padding-left: 7%;
-    }
-
-    #view_3 #dishTable .col{
-        max-width: 20vw;
+    
+    #view_3 td{
+        width: 33%;
+        height: 33%;
+        padding: 0px 0px 0px 0px;
     }
 }

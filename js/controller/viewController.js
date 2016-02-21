@@ -30,7 +30,6 @@ var View_3Controller = function (view, model) {
         view.update();
     });
 
-
     view.container.on({
         "click": function (e) {
             if ($(e.target).hasClass('dishImage')) {
