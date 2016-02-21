@@ -85,7 +85,27 @@
     #view_3 h3{
         font-size: 2vw;
     }
-    
+
+    #view_3 #top input{
+        width: 20vw;
+        float:left;
+        margin-left: 3%;
+    }
+
+    #view_3 #top button {
+        background-color: orange;
+        color:black;
+        padding:5px 5px 5px 5px;
+        float:left;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    #view_3 #top select{
+        margin-left: 40%;
+        width: 20vw;
+    }
+
     #view_3 td{
         width: 33%;
         height: 33%;
