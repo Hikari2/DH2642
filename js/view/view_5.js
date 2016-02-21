@@ -6,11 +6,16 @@
 
 
 var View_5 = function (container, model) {
+
+    model.addObserver(this);
     this.returnButton = container.find("#returnButton");
     this.printButton = container.find("#printButton");
-    model.addObserver(this);
+
     this.update = function () {
+
         var menu = model.getFullMenu();
+
+        $('#view_5 #mid').html(" ");
 
         var row = "";
         for (var i = 0; i < menu.length; i++) {

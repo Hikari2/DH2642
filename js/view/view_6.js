@@ -3,9 +3,14 @@
  */
 
 var View_6 = function (container, model) {
-    this.returnButton = container.find("#returnButton");
+
     model.addObserver(this);
+    this.returnButton = container.find("#returnButton");
+
     this.update = function () {
+
+        $('#view_6 #mealTable').html(" ");
+
         var menu = model.getFullMenu();
         var row;
         for (var i = 0; i < menu.length; i++) {

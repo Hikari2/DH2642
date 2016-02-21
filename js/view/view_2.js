@@ -16,9 +16,6 @@ var View_2 = function (container, model) {
 
         var table = document.getElementById("menuTable");
 
-        if (table == undefined)
-            return;
-
         table.innerHTML = " <tr><th>Dish Name</th><th>Cost</th></tr>";
 
         for (i = 0; i < menu.length; i++) {
