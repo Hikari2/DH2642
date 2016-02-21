@@ -8,7 +8,7 @@ var DinnerModel = function () {
     {
         for (var i = 0; i < observers.length; i++)
         {
-            observers[i].update(obj);	 			// Update in view
+            //observers[i].update(obj);	 			// Update in view
         }
     }
 
@@ -25,6 +25,7 @@ var DinnerModel = function () {
                 observers[i].update(obj);
             }
         }
+    }  
         // Add new obs. to array
         this.addObserver = function (observer)
         {
@@ -585,4 +586,4 @@ var DinnerModel = function () {
             }
         ];
     }
-}
+
