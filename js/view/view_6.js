@@ -4,7 +4,7 @@
 
 var View_6 = function (container, model) {
     this.returnButton = container.find("#returnButton");
-
+    model.addObserver(this);
     this.update = function () {
         var menu = model.getFullMenu();
         var row;

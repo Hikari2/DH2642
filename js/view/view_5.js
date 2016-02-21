@@ -8,7 +8,7 @@
 var View_5 = function (container, model) {
     this.returnButton = container.find("#returnButton");
     this.printButton = container.find("#printButton");
-
+    model.addObserver(this);
     this.update = function () {
         var menu = model.getFullMenu();
 
@@ -21,16 +21,16 @@ var View_5 = function (container, model) {
             row += "</div>";
             $('#view_5 #mid').append(row);
         }
-        
+
         var total = 0;
-        for (var j=0; j<menu.length; j++){
-            total += model.getDishPrice(menu[j].id) ;
+        for (var j = 0; j < menu.length; j++) {
+            total += model.getDishPrice(menu[j].id);
         }
 
         row = "<div class=col-xs-1><h3>Total</h3>";
-        row += "<p><span>"+total+"</span> SEK</p></div>";
+        row += "<p><span>" + total + "</span> SEK</p></div>";
         $('#view_5 #mid').append(row);
-        
+
         container.find("#totalGuests").html(model.getNumberOfGuests());
     }
 

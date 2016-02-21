@@ -9,7 +9,7 @@ var View_4 = function (container, model) {
     //this.backButton = container.find("#backToSelectDish");
     //this.confirmbutton = container.find("#confirmDish");
     //this.dishDetailsView = container.find("#dishDetailsView");
-
+    model.addObserver(this);
     this.update = function (dishID) {
 
         var dish = model.getDish(dishID);

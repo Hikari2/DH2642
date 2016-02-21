@@ -7,6 +7,7 @@ var View_2 = function (container, model) {
     model.addDishToMenu(2);
     model.addDishToMenu(100);
     model.addDishToMenu(200);
+    model.addObserver(this);
     this.guestCounter = container.find("#guestCounter");
     this.confirmButton = container.find("#confirmButton");
 

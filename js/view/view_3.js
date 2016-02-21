@@ -7,7 +7,7 @@ var View_3 = function (container, model) {
     this.typeSelector = container.find("#typeSelector");
     this.searchField = container.find("#searchField");
     this.searchButton = container.find("#searchButton");
-
+    model.addObserver(this);
     this.update = function () {
         var dishes = model.getAllDishes(this.typeSelector.val(), this.searchField.val());
         var i = 0;
