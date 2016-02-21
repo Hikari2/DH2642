@@ -3,6 +3,7 @@
  */
 
 var View_2 = function (container, model) {
+
     model.addDishToMenu(2);
     model.addDishToMenu(100);
     model.addDishToMenu(200);
@@ -33,6 +34,10 @@ var View_2 = function (container, model) {
         this.totalCost = container.find("#totalCost");
 
         this.totalCost.html(model.getTotalMenuPrice());
+    };
+
+    this.hide = function () {
+        $("#view_2").hide();
     };
 
     this.update();

@@ -6,15 +6,15 @@
 
 
 var View_5 = function (container, model) {
-    //this.backButton = container.find("#goBackAndEditDinner");
-    //this.confirmbutton = container.find("#printFullRecipe");
+    this.returnButton = container.find("#returnButton");
+    this.printButton = container.find("#printButton");
 
     this.update = function () {
         var menu = model.getFullMenu();
 
         var row = "";
         for (var i = 0; i < menu.length; i++) {
-            row = "<div class=col-md-2>";
+            row = "<div class=col-xs-2>";
             row += "<img src='" + "images/" + menu[i].image + "'>";
             row += "<h1>" + menu[i].name + "</h1>";
             row += "<p>" + model.getDishPrice(menu[i].id) + "<span> SEK</span></p>";
@@ -27,7 +27,7 @@ var View_5 = function (container, model) {
             total += model.getDishPrice(menu[j].id) ;
         }
 
-        row = "<div class=col-md-1><h3>Total</h3>";
+        row = "<div class=col-xs-1><h3>Total</h3>";
         row += "<p><span>"+total+"</span> SEK</p></div>";
         $('#view_5 #mid').append(row);
         

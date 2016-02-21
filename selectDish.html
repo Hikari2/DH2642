@@ -43,19 +43,17 @@
                         <div id="top">
                             <h3>SELECT DISH</h3>
                             <hr>
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="searchField" placeholder="Enter key words">
-                                </div>
-                                <button type="submit" class="btn btn-default">Search</button>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option value="Main">Main
-                                        <option value="Appertizer">Appetizer
-                                        <option value="Dessert">Dessert
-                                    </select>
-                                </div>
-                            </form>
+
+                            <input type="text" id="searchField" class="form-control" placeholder="Enter key words">
+
+                            <button type="button" id="searchButton" class="btn btn-default">Search</button>
+
+                            <select id="typeSelector" class="form-control">
+                                <option value="main dish">Main Dish
+                                <option value="starter">Starter
+                                <option value="dessert">Dessert
+                            </select>
+
                         </div>
                         <div id="bot">
                             <table id = "dishTable"  class="table">

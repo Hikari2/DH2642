@@ -7,8 +7,8 @@ header{
     overflow:hidden;
     display: inline-block;
     background-color: white;
-    border-bottom: solid;
-    border-width: 1px;
+    //border-bottom: solid;
+    //border-width: 1px;
 }
 
 header p{
@@ -36,6 +36,23 @@ header p.big{
 
     header p.big{
         font-size: 6vw;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    header {
+        height:15%;
+    }
+
+    header p{
+        font-size: 3vw;
+        margin:0vh 0vw 0vh 0vw
+    }
+
+    header p.big{
+        font-size: 8vw;
         float: none;
     }
 }
