@@ -5,17 +5,17 @@ var DinnerModel = function() {
     var observers = [];  // array to hold all the observers
 
     function notifyObservers(obj)
+    {   
+        // Update in view
+        for(var i = 0; i < observers.length; i++)
+        {
+            observers[i].update(obj);	
+        }
+    }
+        // Add new obs. to array
+	this.addObserver = function(observer) 
 	{
-		for(var i = 0; i < observers.length; i++)
-		{
-		 	observers[i].update(obj);	 			// Update in view
-		}
-	}
-
-	this.addObserver = function(observer) 					// Add new obs. to array
-	{
-
-		observers.push(observer);
+            observers.push(observer);
 	}
 
 
@@ -88,6 +88,8 @@ var DinnerModel = function() {
                 menu.splice(j, 1);
         }
         menu.push(newDish);
+        notifyObservers();
+
     }
 
     //Removes dish from menu
@@ -97,6 +99,8 @@ var DinnerModel = function() {
             if (dish.id == id) 
                 menu.splice(i, 1);
         }
+            notifyObservers();
+
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
