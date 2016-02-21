@@ -3,7 +3,5 @@
  */
 
 var View_1 = function (container, model) {
-    model.addObserver(this);
     this.newDinnerButton = container.find("#newDinnerButton");
-    
 }

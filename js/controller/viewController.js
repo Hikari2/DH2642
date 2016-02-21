@@ -13,7 +13,6 @@ var View_2Controller = function (view, model) {
 
     view.guestCounter.on('change', function () {
         model.setNumberOfGuests($(this).val());
-        view.update();
     });
 
     view.confirmButton.on('click', function () {
