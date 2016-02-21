@@ -2,9 +2,26 @@
 var DinnerModel = function() {
     var guestCount = 1;
     var menu = [];
+    var observers = [];  // array to hold all the observers
+
+    function notifyObservers(obj)
+	{
+		for(var i = 0; i < observers.length; i++)
+		{
+		 	observers[i].update(obj);	 			// Update in view
+		}
+	}
+
+	this.addObserver = function(observer) 					// Add new obs. to array
+	{
+
+		observers.push(observer);
+	}
+
 
     this.setNumberOfGuests = function(num) {
         guestCount = num;
+        notifyObservers();
     }
 
     // should return fl
