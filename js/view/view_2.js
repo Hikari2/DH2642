@@ -13,7 +13,9 @@ var View_2 = function (container, model) {
     this.confirmButton = container.find("#confirmButton");
 
     this.update = function () {
-
+        
+        var pendingDish;
+        
         $('#view_2 #menuTable').html(" ");
 
         var menu = model.getFullMenu();
@@ -28,8 +30,11 @@ var View_2 = function (container, model) {
             row += "</tr>";
             $('#view_2 #menuTable').append(row);
         }
-
-        $('#view_2 #menuTable').append("<tr class='pendingDishRow'><td>Pending</td><td><p class='priceCol'>" + model.getDishPrice(111) + "</p></td></tr>");
+        
+        if (pendingDish != undefined)
+            $('#view_2 #menuTable').append("<tr class='pendingDishRow' style='border: solid'><td>Pending</td><td><p class='priceCol'>" + model.getDishPrice(111) + "</p></td><td></td></tr>");
+        else
+            $('#view_2 #menuTable').append("<tr class='pendingDishRow'><td>Pending</td><td><p class='priceCol'></p></td><td></td></tr>");
 
         this.totalCost = container.find("#totalCost");
 
