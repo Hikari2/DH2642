@@ -46,6 +46,9 @@
     color:black;
     padding:10px 10px 10px 10px;
     font-size: 1vw; 
+    border: 1px solid #CCC;
+    border-radius: 0px;
+    box-shadow: 3px 3px 3px #888888;
 }
 
 @media screen and (max-width: 1200px) {

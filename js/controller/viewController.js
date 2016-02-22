@@ -21,6 +21,12 @@ var View_2Controller = function (view, model) {
         $("#view_4").hide();
         $("#view_5").show();
     });
+
+    view.container.on('click', function (e) {
+        if ($(e.target).hasClass('cancelButton')) {
+            model.removeDishFromMenu(e.target.id);
+        }
+    });
 }
 
 var View_3Controller = function (view, model) {
@@ -38,7 +44,7 @@ var View_3Controller = function (view, model) {
         },
         "mouseover": function (e) {
             if ($(e.target).hasClass('dishImage')) {
-                $(e.target).css('background-color', '#000000');
+                $(e.target).css('background-color', 'orange');
             }
         },
         "mouseout": function (e) {

@@ -15,9 +15,8 @@ var DinnerModel = function () {
     this.addObserver = function (observer) {
         observers.push(observer);
     }
-
+    
     this.setNumberOfGuests = function (num) {
-        // Update in view
         for (var i = 0; i < observers.length; i++)
         {
             observers[i].update(obj);

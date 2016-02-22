@@ -1,19 +1,46 @@
 
 #view_2{
     width: 20%;
-    height: 100%;
+    height: 100vh;
+    border-right: solid;
+    border-width: 1px;
     padding:20px 20px 20px 20px;
 }
 
-#view_2 th{
-    background-color:#ccc;
+#view_2 #total{
+    text-align: right;
 }
 
+#view_2 th{
+    background-color:#A9A9A9;
+}
+
+#view_2 .menuRow{
+    background-color:#DCDCDC;
+}
+
+#view_2 .menuRow img{
+    width: 1vw;
+    height: 1vh;    
+    float: right;
+}
+
+#view_2 .priceCol{
+    text-align: right;
+}
+
+#view_2 .nameCol{
+    text-align: left;
+}
+    
 #view_2 button {
     background-color: orange;
     color:black;
     padding:10px 10px 10px 10px;
-    font-size: 1vw; 
+    font-size: 1vw;    
+    border: 1px solid #CCC;
+    border-radius: 0px;
+    box-shadow: 3px 3px 3px #888888;
 }
 
 hr{
@@ -27,11 +54,11 @@ hr{
 }
 
 @media screen and (max-width: 1180px) {
-    
+
     #view_2{
         font-size: 1vw;
     }
-    
+
     #view_2 h1{
         font-size: 2vw;
     }

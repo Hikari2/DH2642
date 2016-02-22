@@ -17,7 +17,7 @@ var View_6 = function (container, model) {
             row = "<tr>";
             row += "<td><img src = images/" + menu[i].image + "></td>";
             row += "<td><h1>" + menu[i].name + "</h1></td>";
-            row += "<td><h3>Preparation</h3> <p>" + menu[i].description + "</p></td>";
+            row += "<td><h3>Preparation</h3> </p>" + menu[i].description + "</p></td>";
             row += "</tr>";
             $('#view_6 #mealTable').append(row);
         }

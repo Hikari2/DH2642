@@ -6,7 +6,7 @@
 }
 
 #view_3 #top{
-    padding:1% 1% 1% 1%;
+    padding:2% 2% 2% 2%;
     background-color:#FFFDD0;
     height: 20%;
 }
@@ -20,6 +20,8 @@
     width: 15vw;
     float:left;
     margin-left: 3%;
+    border: 1px solid #CCC;
+    border-radius: 0px;
 }
 
 #view_3 #top button {
@@ -28,11 +30,16 @@
     padding:5px 5px 5px 5px;
     float:left;
     margin-left: 1%;
+    border: 1px solid #CCC;
+    border-radius: 0px;
+    box-shadow: 3px 3px 3px #888888;
 }
 
 #view_3 #top select{
     margin-left: 40%;
     width: 15vw;
+    border: 1px solid #CCC;
+    border-radius: 0px;
 }
 
 #view_3 #top hr{

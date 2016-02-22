@@ -7,8 +7,8 @@ header{
     overflow:hidden;
     display: inline-block;
     background-color: white;
-    //border-bottom: solid;
-    //border-width: 1px;
+    border-bottom: solid;
+    border-width: 1px;
 }
 
 header p{

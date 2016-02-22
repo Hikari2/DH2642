@@ -3,11 +3,13 @@
  */
 
 var View_3 = function (container, model) {
+    
+    model.addObserver(this);
     this.container = container;
     this.typeSelector = container.find("#typeSelector");
     this.searchField = container.find("#searchField");
     this.searchButton = container.find("#searchButton");
-    model.addObserver(this);
+
     this.update = function () {
         var dishes = model.getAllDishes(this.typeSelector.val(), this.searchField.val());
         var i = 0;
