@@ -2,8 +2,6 @@
 #view_2{
     width: 20%;
     height: 100vh;
-    border-right: solid;
-    border-width: 1px;
     padding:20px 20px 20px 20px;
 }
 
@@ -17,6 +15,8 @@
 
 #view_2 .menuRow{
     background-color:#DCDCDC;
+    //border: solid;
+    //border-color: #DCDCDC; 
 }
 
 #view_2 .menuRow img{
