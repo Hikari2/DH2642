@@ -43,6 +43,13 @@ var View_2Controller = function (view, model) {
             model.removeDishFromMenu(e.target.id);
         }
     });
+    
+    view.container.click(function   (e)    {
+	if ($(e.target).hasClass('clickable')) {					
+            launchView("#view_4");
+            model.setPendingDish(e.target.id);
+        }
+    });
 }
 
 var View_3Controller = function (view, model) {
@@ -81,7 +88,13 @@ var View_3Controller = function (view, model) {
 }
 
 var View_4Controller = function (view, model) {
-
+    view.backButton.click(function() {
+	launchView("#view_3");
+	});
+            view.confirmbutton.click(function() {
+		model.addDishToMenu(view.activeID);
+		launchView("#view_3");
+            });
 }
 
 var View_5Controller = function (view, model) {

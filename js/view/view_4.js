@@ -6,9 +6,9 @@
 
 
 var View_4 = function (container, model) {
-    //this.backButton = container.find("#backToSelectDish");
-    //this.confirmbutton = container.find("#confirmDish");
-    //this.dishDetailsView = container.find("#dishDetailsView");
+    this.backButton = container.find("#backToSelectDish");
+    this.confirmbutton = container.find("#confirmDish");
+
     model.addObserver(this);
     this.update = function (dishID) {
 
@@ -50,7 +50,7 @@ var View_4 = function (container, model) {
         var row = table.insertRow(rowCount);
 
         var c1 = row.insertCell(0);
-        c1.innerHTML = "<button>Confirm Dish</button>";
+        c1.innerHTML = "<button>\</button>";
 
         var c2 = row.insertCell(1);
         c2.innerHTML = " ";
