@@ -1,11 +1,12 @@
 
 body{
     background-color: #DCDCDC;
+    overflow: hidden;
 }
 
 #main{
     width: 80vw;
-    height: 100%;
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
     background-color: white;

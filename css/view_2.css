@@ -2,7 +2,6 @@
 #view_2{
     width: 20%;
     height: 100vh;
-    padding:20px 20px 20px 20px;
 }
 
 #view_2 #total{
@@ -10,11 +9,15 @@
 }
 
 #view_2 th{
-    background-color:#A9A9A9;
+    background-color:#D3D3D3;
 }
 
-#view_2 .menuRow{
- 
+#view_2 .table p{
+    color: #B22222;
+}
+
+#view_2 #total{ 
+    color: #B22222;
 }
 
 #view_2 .menuRow img{

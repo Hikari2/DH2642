@@ -368,6 +368,50 @@ var DinnerModel = function () {
                     'price': 4
                 }]
         }, {
+            'id': 103,
+            'name': 'MD 5',
+            'type': 'main dish',
+            'image': 'meatballs.jpg',
+            'description': "Here is how you make it... Lore ipsum...",
+            'ingredients': [{
+                    'name': 'ingredient 1',
+                    'quantity': 1,
+                    'unit': 'pieces',
+                    'price': 4
+                }, {
+                    'name': 'ingredient 2',
+                    'quantity': 12,
+                    'unit': 'g',
+                    'price': 7
+                }, {
+                    'name': 'ingredient 3',
+                    'quantity': 6,
+                    'unit': 'ml',
+                    'price': 4
+                }]
+        }, {
+            'id': 104,
+            'name': 'MD 6',
+            'type': 'main dish',
+            'image': 'meatballs.jpg',
+            'description': "Here is how you make it... Lore ipsum...",
+            'ingredients': [{
+                    'name': 'ingredient 1',
+                    'quantity': 1,
+                    'unit': 'pieces',
+                    'price': 4
+                }, {
+                    'name': 'ingredient 2',
+                    'quantity': 12,
+                    'unit': 'g',
+                    'price': 7
+                }, {
+                    'name': 'ingredient 3',
+                    'quantity': 6,
+                    'unit': 'ml',
+                    'price': 4
+                }]
+        }, {
             'id': 200,
             'name': 'Chocolat Ice cream',
             'type': 'dessert',

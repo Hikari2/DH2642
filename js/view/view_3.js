@@ -15,18 +15,18 @@ var View_3 = function (container, model) {
         var i = 0;
         var row;
         
-        $("#view_3 #dishTable").html("<tr></tr>");
+        $("#view_3 #dishTable").html(" ");
         
         while (true) {
             row = "<tr>";
-            for (var j = 0; j < 3; j++) {
-                if (dishes[i * 3 + j] == undefined) {
+            for (var j = 0; j < 4; j++) {
+                if (dishes[i * 4 + j] == undefined) {
                     row += "</tr>";
                     $("#view_3 #dishTable").append(row);
                     return;
                 }
-                row += "<td><div class='col'><img  id='"+dishes[i * 3 + j].id+"' class='dishImage' src = images/" + dishes[i * 3 + j].image + ">";
-                row += "<p>" + dishes[i * 3 + j].name + "</p>";
+                row += "<td><div class='col'><img  id='"+dishes[i * 4 + j].id+"' class='dishImage' src = images/" + dishes[i * 4 + j].image + ">";
+                row += "<p>" + dishes[i * 4 + j].name + "</p>";
             }
             row += "</tr>";
             $("#view_3 #dishTable").append(row);

@@ -84,7 +84,7 @@ var View_3Controller = function (view, model) {
         },
         "mouseover": function (e) {
             if ($(e.target).hasClass('dishImage')) {
-                $(e.target).css('background-color', '#8B0000');
+                $(e.target).css('background-color', 'black');
             }
         },
         "mouseout": function (e) {
