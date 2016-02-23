@@ -54,6 +54,10 @@ var View_2Controller = function (view, model) {
 
 var View_3Controller = function (view, model) {
 
+    view.typeSelector.on('change', function () {
+        view.update();
+    });
+
     view.searchButton.on({
         "click": function () {
             view.update();
@@ -88,18 +92,18 @@ var View_3Controller = function (view, model) {
 }
 
 var View_4Controller = function (view, model) {
-    
+
     view.backButton.click(function () {
         $("#view_4").hide();
         $("#view_3").show();
     });
-    
+
     view.confirmButton.click(function () {
         //model.addDishToMenu(view.activeID);
         $("#view_4").hide();
         $("#view_3").show();
     });
-    
+
 }
 
 var View_5Controller = function (view, model) {

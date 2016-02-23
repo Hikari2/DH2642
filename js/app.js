@@ -1,6 +1,9 @@
 $(function () {
     //We instantiate our model
     var model = new DinnerModel();
+    model.addDishToMenu(2);
+    model.addDishToMenu(100);
+    model.addDishToMenu(200);
 
     var view_1 = new View_1($("#view_1"), model);
     var view_2 = new View_2($("#view_2"), model);
@@ -9,9 +12,9 @@ $(function () {
     var view_5 = new View_5($("#view_5"), model);
     var view_6 = new View_6($("#view_6"), model);
 
-    $("#view_1").hide();
-    $("#view_2").show();
-    $("#view_3").show();
+    $("#view_1").show();
+    $("#view_2").hide();
+    $("#view_3").hide();
     $("#view_4").hide();
     $("#view_5").hide();
     $("#view_6").hide();

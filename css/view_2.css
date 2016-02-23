@@ -19,8 +19,8 @@
 
 #view_2 .menuRow img{
     width: 1vw;
-    height: 1vh;    
-    float: right;
+    height: 1vh;
+    /* float: right; */
 }
 
 #view_2 .priceCol{

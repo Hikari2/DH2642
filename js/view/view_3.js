@@ -14,7 +14,9 @@ var View_3 = function (container, model) {
         var dishes = model.getAllDishes(this.typeSelector.val(), this.searchField.val());
         var i = 0;
         var row;
+        
         $("#view_3 #dishTable").html("<tr></tr>");
+        
         while (true) {
             row = "<tr>";
             for (var j = 0; j < 3; j++) {
@@ -33,8 +35,4 @@ var View_3 = function (container, model) {
     };
 
     this.update();
-
-    this.hide = function () {
-        $("#view_3").hide();
-    };
 }
