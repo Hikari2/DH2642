@@ -107,22 +107,6 @@ var View_4Controller = function (view, model) {
         $("#view_4").hide();
         $("#view_3").show();
     });
-
-    dishes = model.getFullMenu();
-    var dishesType = [];
-    var pendingDish = [];
-    for (var i = 0; i < dishes.length; i++) {
-        dishesType.push(model.getDish(dishes[i]));
-    }
-
-    for (var i = 0; i < dishesType.length; i++) {
-        if (dishesType[i].type === id) {
-            pendingDish.push(dishesType[i]);
-        }
-    }
-
-    model.pendingDish(pendingDish);
-    notifyObservers();
 };
 
 

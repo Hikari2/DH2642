@@ -8,22 +8,20 @@
     text-align: right;
 }
 
+#view_2 .table{
+}
+
 #view_2 th{
     background-color:#D3D3D3;
 }
 
-#view_2 .table p{
-    color: #B22222;
-}
-
-#view_2 #total{ 
-    color: #B22222;
+#view_2 .menuRow{
+    //background-color:#DCDCDC;
 }
 
 #view_2 .menuRow img{
     width: 1vw;
     height: 1vh;
-    /* float: right; */
 }
 
 #view_2 .priceCol{
@@ -36,12 +34,13 @@
 
 #view_2 button {
     background-color: orange;
-    color:black;
-    padding:10px 10px 10px 10px;
+    color: black;
+    padding: 5px 5px 5px 5px;
     font-size: 1vw;    
     border: 1px solid #CCC;
     border-radius: 0px;
     box-shadow: 3px 3px 3px #888888;
+    width: 80%;
 }
 
 hr{
