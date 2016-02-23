@@ -71,6 +71,7 @@
 }
 
 #view_3 .col{
+    max-width: 18vw;
     margin:25px 25px 25px 25px;
 }
 
