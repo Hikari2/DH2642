@@ -9,14 +9,14 @@ var DinnerModel = function () {
     {
         for (var i = 0; i < observers.length; i++)
         {
-            observers[i].update(obj);	 			
+            observers[i].update(obj);
         }
     }
 
     this.addObserver = function (observer) {
         observers.push(observer);
     }
-    
+
     this.setNumberOfGuests = function (num) {
         for (var i = 0; i < observers.length; i++)
         {
@@ -30,15 +30,15 @@ var DinnerModel = function () {
         observers.push(observer);
     }
 
-    this.setPendingDish = function(id) 
+    this.setPendingDish = function (id)
     {
-	pendingDish = id;
+        pendingDish = id;
         notifyObservers();
     }
-        
-    this.getPendingDish = function(id) 
+
+    this.getPendingDish = function (id)
     {
-	return pendingDish; 
+        return pendingDish;
     }
 
     this.setNumberOfGuests = function (num) {
@@ -346,7 +346,7 @@ var DinnerModel = function () {
                     'price': 4
                 }]
         }, {
-            'id': 103,
+            'id': 102,
             'name': 'MD 4',
             'type': 'main dish',
             'image': 'meatballs.jpg',
@@ -364,182 +364,6 @@ var DinnerModel = function () {
                 }, {
                     'name': 'ingredient 3',
                     'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 104,
-            'name': 'MD 5',
-            'type': 'main dish',
-            'image': 'bakedbrie.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 105,
-            'name': 'MD 6',
-            'type': 'main dish',
-            'image': 'meatballs.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 106,
-            'name': 'MD 7',
-            'type': 'main dish',
-            'image': 'bakedbrie.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 107,
-            'name': 'MD 8',
-            'type': 'main dish',
-            'image': 'bakedbrie.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 108,
-            'name': 'MD 9',
-            'type': 'main dish',
-            'image': 'bakedbrie.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 109,
-            'name': 'MD 10',
-            'type': 'main dish',
-            'image': 'bakedbrie.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 1,
-                    'unit': 'pieces',
-                    'price': 4
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 12,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 6,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 110,
-            'name': 'MD 11',
-            'type': 'main dish',
-            'image': 'meatballs.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 2,
-                    'unit': 'pieces',
-                    'price': 8
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 10,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 5,
-                    'unit': 'ml',
-                    'price': 4
-                }]
-        }, {
-            'id': 111,
-            'name': 'MD 12',
-            'type': 'main dish',
-            'image': 'meatballs.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ingredient 1',
-                    'quantity': 2,
-                    'unit': 'pieces',
-                    'price': 8
-                }, {
-                    'name': 'ingredient 2',
-                    'quantity': 10,
-                    'unit': 'g',
-                    'price': 7
-                }, {
-                    'name': 'ingredient 3',
-                    'quantity': 5,
                     'unit': 'ml',
                     'price': 4
                 }]
@@ -570,18 +394,6 @@ var DinnerModel = function () {
         }, {
             'id': 202,
             'name': 'Strawberry',
-            'type': 'dessert',
-            'image': 'icecream.jpg',
-            'description': "Here is how you make it... Lore ipsum...",
-            'ingredients': [{
-                    'name': 'ice cream',
-                    'quantity': 100,
-                    'unit': 'ml',
-                    'price': 6
-                }]
-        }, {
-            'id': 203,
-            'name': 'Strawberry2',
             'type': 'dessert',
             'image': 'icecream.jpg',
             'description': "Here is how you make it... Lore ipsum...",
