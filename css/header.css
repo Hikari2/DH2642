@@ -7,8 +7,6 @@ header{
     overflow:hidden;
     display: inline-block;
     background-color: white;
-    border-bottom: solid;
-    border-width: 1px;
 }
 
 header p{
@@ -27,7 +25,7 @@ header p.big{
     margin:0vh 0vw 0vh 0vw;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1020px) and (max-height: 1020px) {
 
     header p{   
         font-size: 2vw;
@@ -40,19 +38,20 @@ header p.big{
     }
 }
 
-@media screen and (max-height: 680px) {
+@media screen and (max-width: 1980px) and (min-width: 780px) and (max-height: 780px) {
 
-    header p{   
+    header p{
         font-size: 3vh;
-        margin:0vh 0vw 0vh 0vw;
+        margin: 5vh 0vw 0vh 0vw;
     }
 
     header p.big{
         font-size: 8vh;
-        float: none;
+        float: left;
     }
 }
 
+/*
 @media screen and (max-width: 620px) {
 
     header {
@@ -69,3 +68,4 @@ header p.big{
         float: none;
     }
 }
+*/
