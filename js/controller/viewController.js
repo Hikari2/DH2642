@@ -57,6 +57,7 @@ var View_2Controller = function (view, model) {
 }
 
 var View_3Controller = function (view, model) {
+    
     view.typeSelector.on('change', function () {
         view.update();
     });
@@ -101,27 +102,29 @@ var View_4Controller = function (view, model) {
         $("#view_3").show();
     });
 
-    view.confirmButton.click(function () {        
+    view.confirmButton.click(function () {
         //model.addDishToMenu(view.id);
         $("#view_4").hide();
         $("#view_3").show();
     });
-    
+
     dishes = model.getFullMenu();
     var dishesType = [];
     var pendingDish = [];
-	for (var i = 0; i < dishes.length; i++) {
-            dishesType.push(model.getDish(dishes[i]));
-            };
-	for (var i = 0; i < dishesType.length; i++) {
-            if (dishesType[i].type === id) {
-		pendingDish.push(dishesType[i]);
-		};
-	};
-	model.pendingDish(pendingDish);
-	notifyObservers();
-    };
-        
+    for (var i = 0; i < dishes.length; i++) {
+        dishesType.push(model.getDish(dishes[i]));
+    }
+
+    for (var i = 0; i < dishesType.length; i++) {
+        if (dishesType[i].type === id) {
+            pendingDish.push(dishesType[i]);
+        }
+    }
+
+    model.pendingDish(pendingDish);
+    notifyObservers();
+};
+
 
 var View_5Controller = function (view, model) {
 

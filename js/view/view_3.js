@@ -25,7 +25,7 @@ var View_3 = function (container, model) {
                     $("#view_3 #dishTable").append(row);
                     return;
                 }
-                row += "<td><div class='col'><img  class='dishImage' src = images/" + dishes[i * 3 + j].image + ">";
+                row += "<td><div class='col'><img  id='"+dishes[i * 3 + j].id+"' class='dishImage' src = images/" + dishes[i * 3 + j].image + ">";
                 row += "<p>" + dishes[i * 3 + j].name + "</p>";
             }
             row += "</tr>";
