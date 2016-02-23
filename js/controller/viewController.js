@@ -43,9 +43,9 @@ var View_2Controller = function (view, model) {
             model.removeDishFromMenu(e.target.id);
         }
     });
-    
-    view.container.click(function   (e)    {
-	if ($(e.target).hasClass('clickable')) {
+
+    view.container.click(function (e) {
+        if ($(e.target).hasClass('clickable')) {
             $("#view_4").show();
             model.setPendingDish(e.target.id);
         }
@@ -88,13 +88,18 @@ var View_3Controller = function (view, model) {
 }
 
 var View_4Controller = function (view, model) {
-    view.backButton.click(function() {
-	$("#view_3").show();
-	});
-            view.confirmbutton.click(function() {
-		model.addDishToMenu(view.activeID);
-		$("#view_3").show();
-            });
+    
+    view.backButton.click(function () {
+        $("#view_4").hide();
+        $("#view_3").show();
+    });
+    
+    view.confirmButton.click(function () {
+        //model.addDishToMenu(view.activeID);
+        $("#view_4").hide();
+        $("#view_3").show();
+    });
+    
 }
 
 var View_5Controller = function (view, model) {
