@@ -38,11 +38,13 @@ var View_2Controller = function (view, model) {
         }
     });
 
+
     view.container.on('click', function (e) {
         if ($(e.target).hasClass('cancelButton')) {
             model.removeDishFromMenu(e.target.id);
         }
     });
+
 
     view.container.click(function (e) {
         if ($(e.target).hasClass('clickable')) {
@@ -53,7 +55,6 @@ var View_2Controller = function (view, model) {
 }
 
 var View_3Controller = function (view, model) {
-
     view.typeSelector.on('change', function () {
         view.update();
     });
@@ -98,8 +99,7 @@ var View_4Controller = function (view, model) {
         $("#view_3").show();
     });
 
-    view.confirmButton.click(function () {
-        //model.addDishToMenu(view.activeID);
+    view.confirmButton.click(function () {         //model.addDishToMenu(view.activeID);
         $("#view_4").hide();
         $("#view_3").show();
     });
