@@ -352,7 +352,7 @@ var DinnerModel = function () {
                     'price': 4
                 }]
         }, {
-            'id': 102,
+            'id': 103,
             'name': 'MD 4',
             'type': 'main dish',
             'image': 'meatballs.jpg',
@@ -374,7 +374,7 @@ var DinnerModel = function () {
                     'price': 4
                 }]
         }, {
-            'id': 103,
+            'id': 104,
             'name': 'MD 5',
             'type': 'main dish',
             'image': 'meatballs.jpg',
@@ -396,7 +396,7 @@ var DinnerModel = function () {
                     'price': 4
                 }]
         }, {
-            'id': 104,
+            'id': 105,
             'name': 'MD 6',
             'type': 'main dish',
             'image': 'meatballs.jpg',

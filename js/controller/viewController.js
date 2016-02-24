@@ -47,11 +47,10 @@ var View_2Controller = function (view, model) {
         }
     });
 
-
     view.container.click(function (e) {
         if ($(e.target).hasClass('clickable')) {
             $("#view_4").show();
-            model.setPendingDish(e.target.id);
+            model.setPendingDish((e.target || e.srcElement).id);   
         }
     });
 };
@@ -80,7 +79,7 @@ var View_3Controller = function (view, model) {
             if ($(e.target).hasClass('dishImage')) {
                 $("#view_3").hide();
                 $("#view_4").show();
-                model.setPendingDish(e.target.id);    
+                model.setPendingDish((e.target || e.srcElement).id);    
             }
         },
         "mouseover": function (e) {
