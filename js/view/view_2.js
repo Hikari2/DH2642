@@ -11,7 +11,7 @@ var View_2 = function (container, model) {
 
     this.update = function () {
         
-        var pendingDish;
+        var pendingDish = model.getPendingDish();
         
         $('#view_2 #menuTable').html(" ");
 
@@ -29,7 +29,7 @@ var View_2 = function (container, model) {
         }
         
         if (pendingDish != undefined)
-            $('#view_2 #menuTable').append("<tr class='pendingDishRow' style='border: solid'><td><p>Pending</p></td><td><p class='priceCol'>" + model.getDishPrice(111) + "</p></td><td></td></tr>");
+            $('#view_2 #menuTable').append("<tr class='pendingDishRow' style='border: solid'><td><p>Pending</p></td><td><p class='priceCol'>" + model.getDishPrice(pendingDish) + "</p></td><td></td></tr>");
         else
             $('#view_2 #menuTable').append("<tr class='pendingDishRow'><td><p>Pending</p></td><td><p class='priceCol'></p></td><td></td></tr>");
 
