@@ -17,6 +17,7 @@ var View_2Controller = function (view, model) {
             $("#view_3").hide();
             $("#view_4").hide();
             $("#view_5").show();
+            model.removePendingDish();
         },
         "mouseover": function (e) {
             $(e.target).css('background-color', '#ffb732');
