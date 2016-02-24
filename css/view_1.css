@@ -11,9 +11,11 @@
 }
 
 #view_1 #box{
-    opacity:0.8;
-    padding:20px 20px 20px 30px;
-    background-color:#F2F2F2;
+    font-size: 12px;
+    opacity: 0.8;
+    padding: 20px 20px 20px 30px;
+    background-color: #F2F2F2;
+    min-height: 50%;
 }
 
 #view_1 #box button {

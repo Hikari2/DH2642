@@ -9,7 +9,7 @@
 #view_3 #top{
     padding:2% 2% 2% 2%;
     background-color:#FFFDD0;
-    height: 20%;
+    min-height: 15%;
 }
 
 #view_3 #top h3{

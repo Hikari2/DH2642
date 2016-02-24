@@ -10,6 +10,7 @@ var View_4 = function (container, model) {
     model.addObserver(this);
 
     this.backButton = container.find("#backButton");
+    this.confirmButton = container.find("#confirmButton");
 
     this.update = function (dishID) {
 
@@ -41,14 +42,11 @@ var View_4 = function (container, model) {
 
         row = "<tr>";
         row += "<td></td>";
+        row += "<td></td> ";
         row += "<td>SEK</td>";
         row += "";
         row += "<td>" + model.getDishPrice(dish.id) + "</td>";
         row += "</tr>";
         $('#view_4 #ingredient-list').append(row);
     }
-    
-    this.update();
-    
-    this.confirmButton = container.find("#confirmButton");
 }
