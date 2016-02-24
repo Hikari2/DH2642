@@ -8,11 +8,11 @@
 
 #view_1 #box{
     position: absolute;
-    top: 40%;
+    top: 35%;
     bottom: 20%;
     opacity:0.8;
     padding:20px 20px 20px 30px;
-    height:40%;
+    height:45%;
     width:40%;
     overflow:hidden;
     background-color:#F2F2F2;
@@ -59,15 +59,15 @@
     }
 
     #view_1 #box h1{
-        font-size: 1.5vh;
+        font-size: 2vh;
     }
 
     #view_1 #box p{
-        font-size: 1.5vh;
+        font-size: 2vh;
     }
 
     #view_1 #box button {
-        font-size: 1vh; 
+        font-size: 1.5vh; 
     }
 }
 
@@ -94,8 +94,10 @@
 @media screen and (max-width: 1980px) and (min-width: 460px) and (max-height: 620px) and (min-height: 0px){
 
     #view_1 #box{
-        height: 50%;
+        height: 70%;
         width: 30%;
+        top: 25%;
+        bottom: 20%;
     }
 
     #view_1 #box h1{
@@ -103,11 +105,11 @@
     }
 
     #view_1 #box p{
-        font-size: 0.8vw;
+        font-size: 1vw;
     }
 
     #view_1 #box button {
-        font-size: 0.5vw; 
+        font-size: 0.8vw; 
     }
 }
 
