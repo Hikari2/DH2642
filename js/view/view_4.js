@@ -15,11 +15,10 @@ var View_4 = function (container, model) {
 
         var dish = model.getDish(dishID);
 
-        if (dish == undefined)
+        if (dish === undefined)
             return;
 
         var iUrl = "images/" + dish.image;
-
         $("#dishDetail").html("<h1>" + dish.name + "</h1>" + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
         $("#dish-instructions").html(dish.description);
 

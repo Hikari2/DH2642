@@ -17,7 +17,7 @@ var View_1Controller = function (view, model) {
             $(e.target).css('background-color', 'orange');
         }
     });
-}
+};
 
 var View_2Controller = function (view, model) {
 
@@ -54,7 +54,7 @@ var View_2Controller = function (view, model) {
             model.setPendingDish(e.target.id);
         }
     });
-}
+};
 
 var View_3Controller = function (view, model) {
     
@@ -80,6 +80,7 @@ var View_3Controller = function (view, model) {
             if ($(e.target).hasClass('dishImage')) {
                 $("#view_3").hide();
                 $("#view_4").show();
+                model.setPendingDish(e.target.id);    
             }
         },
         "mouseover": function (e) {
@@ -92,18 +93,19 @@ var View_3Controller = function (view, model) {
                 $(e.target).css('background-color', '');
             }
         }
-    });
-}
+});};
 
 var View_4Controller = function (view, model) {
 
     view.backButton.click(function () {
         $("#view_4").hide();
         $("#view_3").show();
+        model.removePendingDish();
     });
 
     view.confirmButton.click(function () {
-        //model.addDishToMenu(view.id);
+        model.addDishToMenu(model.getPendingDish());
+        model.removePendingDish();
         $("#view_4").hide();
         $("#view_3").show();
     });
@@ -138,7 +140,7 @@ var View_5Controller = function (view, model) {
             $(e.target).css('background-color', 'orange');
         }
     });
-}
+};
 
 var View_6Controller = function (view, model) {
 
@@ -155,4 +157,4 @@ var View_6Controller = function (view, model) {
             $(e.target).css('background-color', 'orange');
         }
     });
-}
+};

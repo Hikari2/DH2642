@@ -3,7 +3,7 @@ var DinnerModel = function () {
     var guestCount = 1;
     var menu = [];
     var observers = [];
-    var pendingDish = 1;
+    var pendingDish;
 
     this.notifyObservers = function (obj)
     {
@@ -33,12 +33,18 @@ var DinnerModel = function () {
     this.setPendingDish = function (id)
     {
         pendingDish = id;
-        notifyObservers();
+        this.notifyObservers(id);
     }
 
     this.getPendingDish = function (id)
     {
         return pendingDish;
+    }
+    
+    this.removePendingDish = function ()
+    {
+        pendingDish = "";
+        this.notifyObservers();
     }
 
     this.setNumberOfGuests = function (num) {
