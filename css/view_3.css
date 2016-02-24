@@ -3,7 +3,6 @@
     width: 80%;
     height: 100%;
     padding: 0px 0px 0px 0px;
-    overflow: scroll;
 }
 
 #view_3 #top{
@@ -56,6 +55,7 @@
 #view_3 #bot{
     height: 80%;
     padding: 20px 20px 20px 20px;
+    overflow: scroll;
 }
 
 #view_3 #dishTable{
