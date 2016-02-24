@@ -40,8 +40,8 @@
     border: 1px solid #CCC;
     border-radius: 0px;
     box-shadow: 3px 3px 3px #888888;
-    width: 80%;
-        font-weight: bold;
+    min-width: 80%;
+    font-weight: bold;
 }
 
 hr{
