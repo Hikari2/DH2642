@@ -41,7 +41,7 @@ var DinnerModel = function () {
         return pendingDish;
     }
     
-    this.removePendingDish = function ()
+     this.removePendingDish = function ()
     {
         pendingDish = undefined;
         this.notifyObservers();
