@@ -40,8 +40,7 @@ var View_4 = function (container, model) {
         container.find("#totalGuests").html(model.getNumberOfGuests());
 
         row = "<tr>";
-        row += "<td><button id='confirmButton' type='button' class='btn btn-default'>Confirm dish</button></td>";
-        row += "<td></td> ";
+        row += "<td></td>";
         row += "<td>SEK</td>";
         row += "";
         row += "<td>" + model.getDishPrice(dish.id) + "</td>";
@@ -49,8 +48,7 @@ var View_4 = function (container, model) {
         $('#view_4 #ingredient-list').append(row);
     }
     
-    this.update(1);
+    this.update();
     
     this.confirmButton = container.find("#confirmButton");
-    
 }
