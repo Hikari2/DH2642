@@ -22,6 +22,7 @@
     border: 1px solid #CCC;
     border-radius: 0px;
     box-shadow: 3px 3px 3px #888888;
+    font-weight: bold;
 }
 
 #view_5 #mid {
@@ -74,6 +75,7 @@
     border: 1px solid #CCC;
     border-radius: 0px;
     box-shadow: 3px 3px 3px #888888;
+    font-weight: bold;
 }
 
 #view_5 #bot hr{

@@ -49,6 +49,7 @@ body{
     border: 1px solid #CCC;
     border-radius: 0px;
     box-shadow: 3px 3px 3px #888888;
+    font-weight: bold;
 }
 
 #view_6 table td{
@@ -94,5 +95,12 @@ body{
     #view_6 p{
         font-size: 1.5vw;
         margin: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 620px) and (max-width: 620px){
+
+    body{
+        overflow: scroll;
     }
 }
