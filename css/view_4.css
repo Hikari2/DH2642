@@ -48,6 +48,7 @@
 
 #view_4 img{
     box-shadow: 4px 4px 4px #888888;
+    border: solid;
 }
 
 #view_4 h1{
