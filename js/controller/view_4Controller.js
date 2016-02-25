@@ -6,17 +6,35 @@
 
 
 var View_4Controller = function (view, model) {
-
-    view.backButton.click(function () {
-        $("#view_4").hide();
-        $("#view_3").show();
-        model.removePendingDish();      
-        });
-
-    view.confirmButton.click(function () {
+    
+    view.backButton.on({
+        "click": function () {
         model.addDishToMenu(model.getPendingDish());
         model.removePendingDish();
         $("#view_4").hide();
         $("#view_3").show();
-        });
+        },
+        "mouseover": function (e) {
+            $(e.target).css('background-color', '#ffb732');
+        },
+        "mouseout": function (e) {
+            $(e.target).css('background-color', 'orange');
+        }
+    });
+    
+    
+    view.confirmButton.on({
+        "click": function () {
+        model.addDishToMenu(model.getPendingDish());
+        model.removePendingDish();
+        $("#view_4").hide();
+        $("#view_3").show();
+        },
+        "mouseover": function (e) {
+            $(e.target).css('background-color', '#ffb732');
+        },
+        "mouseout": function (e) {
+            $(e.target).css('background-color', 'orange');
+        }
+    });
 };
