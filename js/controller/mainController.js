@@ -17,43 +17,48 @@ var MainController = function (views, model) {
     view_3Controller.hide();
     view_4Controller.hide();
     view_5Controller.hide();
-    view_6Controller.hide();
+    view_6Controller.hide();    
 
+    //Show view 2 and 3
     this.showSelectDish = function () {
         view_1Controller.hide();
         view_2Controller.show();
-        view_3Controller.show();    
+        view_3Controller.show();
         view_4Controller.hide();
         view_5Controller.hide();
         view_6Controller.hide();
     }
 
+    //Show view 4
+    this.showDishDetail = function () {
+        view_3Controller.hide();
+        view_4Controller.show();
+    }
+
+    //Show view 5
     this.showDinnerOverview = function () {
         view_2Controller.hide();
         view_3Controller.hide();
         view_4Controller.hide();
         view_5Controller.show();
     }
-
-    this.showDishDetail = function () {
-        view_3Controller.hide();
-        view_4Controller.show();
-    }
-
+    
+    //Show view 6 
     this.dinnerInstruction = function () {
         view_5Controller.hide();
         view_6Controller.show();
     }
 
+    
     $("#main").on({
         "mouseover": function (e) {
-            if ($(e.target).is( ":button" )) {
-            $(e.target).css('background-color', '#ffb732');
+            if ($(e.target).is(":button")) {
+                $(e.target).css('background-color', '#ffb732');
             }
         },
         "mouseout": function (e) {
-            if ($(e.target).is( ":button" )) {
-            $(e.target).css('background-color', 'orange');
+            if ($(e.target).is(":button")) {
+                $(e.target).css('background-color', 'orange');
             }
         }
     });
