@@ -44,6 +44,8 @@
     background-color:#FFFDD0;
     margin-top: 2%;
     box-shadow: 3px 3px 3px #888888;
+    white-space: nowrap;
+    padding: 5px 5px 5px 5px;
 }
 
 #view_4 img{

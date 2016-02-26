@@ -36,7 +36,7 @@ var DinnerModel = function () {
         this.notifyObservers(id);
     }
 
-    this.getPendingDish = function (id)
+    this.getPendingDish = function ()
     {
         return pendingDish;
     }

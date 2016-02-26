@@ -3,5 +3,7 @@
  */
 
 var View_1 = function (container, model) {
+
+    this.container = container;
     this.newDinnerButton = container.find("#newDinnerButton");
 }

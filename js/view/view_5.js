@@ -8,6 +8,7 @@
 var View_5 = function (container, model) {
 
     model.addObserver(this);
+    this.container = container;
     this.returnButton = container.find("#returnButton");
     this.printButton = container.find("#printButton");
 

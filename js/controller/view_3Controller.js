@@ -1,34 +1,22 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Controller for view 3
  */
 
 
-var View_3Controller = function (view, model) {
+var View_3Controller = function (mainCtrl, view, model) {
 
     view.typeSelector.on('change', function () {
         view.update();
     });
 
-    view.searchButton.on({
-        "click": function () {
-            view.update();
-        },
-        "mouseover": function (e) {
-            $(e.target).css('background-color', '#ffb732');
-        },
-        "mouseout": function (e) {
-            $(e.target).css('background-color', 'orange');
-        }
+    view.searchButton.on("click", function () {
+        view.update();
     });
-
 
     view.container.on({
         "click": function (e) {
             if ($(e.target).hasClass('dishImage')) {
-                $("#view_3").hide();
-                $("#view_4").show();
+                mainCtrl.showDishDetail();
                 model.setPendingDish((e.target || e.srcElement).id);
             }
         },
@@ -43,5 +31,12 @@ var View_3Controller = function (view, model) {
             }
         }
     });
+
+    this.show = function () {
+        $("#view_3").show();
+    }
+    this.hide = function () {
+        $("#view_3").hide();
+    }
 };
 
