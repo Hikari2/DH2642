@@ -5,12 +5,14 @@
 
 var View_3Controller = function (mainCtrl, view, model) {
 
+    model.getAllDishes(view.typeSelector.val(), view.searchField.val());
+
     view.typeSelector.on('change', function () {
-        view.update();
+        model.getAllDishes(view.typeSelector.val(), view.searchField.val());
     });
 
     view.searchButton.on("click", function () {
-        view.update();
+        model.getAllDishes(view.typeSelector.val(), view.searchField.val());
     });
 
     view.container.on({

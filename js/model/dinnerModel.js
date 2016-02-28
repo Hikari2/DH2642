@@ -1,23 +1,15 @@
 //DinnerModel Object constructor
 var DinnerModel = function () {
+
     var guestCount = 1;
     var menu = [];
-    var observers = [];
     var pendingDish;
+
+    var observers = [];
+    var apiKey = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
 
     this.notifyObservers = function (obj)
     {
-        for (var i = 0; i < observers.length; i++)
-        {
-            observers[i].update(obj);
-        }
-    }
-
-    this.addObserver = function (observer) {
-        observers.push(observer);
-    }
-
-    this.setNumberOfGuests = function (num) {
         for (var i = 0; i < observers.length; i++)
         {
             observers[i].update(obj);
@@ -40,8 +32,8 @@ var DinnerModel = function () {
     {
         return pendingDish;
     }
-    
-     this.removePendingDish = function ()
+
+    this.removePendingDish = function ()
     {
         pendingDish = undefined;
         this.notifyObservers();
@@ -135,25 +127,44 @@ var DinnerModel = function () {
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function (type, filter) {
-        return $(dishes).filter(function (index, dish) {
-            var found = true;
-            if (filter) {
-                found = false;
-                $.each(dish.ingredients, function (index, ingredient) {
-                    if (ingredient.name.indexOf(filter) != -1) {
-                        found = true;
-                    }
-                });
-                if (dish.name.indexOf(filter) != -1)
+
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=50" + "&any_kw=" + type + "&any_kw=" + filter + "&api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            url: url,
+            success: function (data) {
+                for (var i = 0; i < observers.length; i++)
                 {
-                    found = true;
+                    observers[i].update(data.Results);
                 }
+            },
+            error: function (xhr, status, error) {
+                //alert('error');
             }
-            return dish.type == type && found;
         });
+
+        /*
+         return $(dishes).filter(function (index, dish) {
+         var found = true;
+         if (filter) {
+         found = false;
+         $.each(dish.ingredients, function (index, ingredient) {
+         if (ingredient.name.indexOf(filter) != -1) {
+         found = true;
+         }
+         });
+         if (dish.name.indexOf(filter) != -1)
+         {
+         found = true;
+         }
+         }
+         return dish.type == type && found;
+         });
+         */
     }
 
-    //function that returns a dish of specific ID
+//function that returns a dish of specific ID
     this.getDish = function (id) {
         for (var i = 0; i < dishes.length; i++)
             if (dishes[i].id == id)
@@ -161,14 +172,14 @@ var DinnerModel = function () {
     }
 
 
-    // the dishes variable contains an array of all the 
-    // dishes in the database. each dish has id, name, type,
-    // image (name of the image file), description and
-    // array of ingredients. Each ingredient has name, 
-    // quantity (a number), price (a number) and unit (string 
-    // defining the unit i.e. "g", "slices", "ml". Unit
-    // can sometimes be empty like in the example of eggs where
-    // you just say "5 eggs" and not "5 pieces of eggs" or anything else.
+// the dishes variable contains an array of all the 
+// dishes in the database. each dish has id, name, type,
+// image (name of the image file), description and
+// array of ingredients. Each ingredient has name, 
+// quantity (a number), price (a number) and unit (string 
+// defining the unit i.e. "g", "slices", "ml". Unit
+// can sometimes be empty like in the example of eggs where
+// you just say "5 eggs" and not "5 pieces of eggs" or anything else.
     var dishes = [{
             'id': 1,
             'name': 'French toast',
