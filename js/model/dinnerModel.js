@@ -50,10 +50,11 @@ var DinnerModel = function () {
     }
 
     //Returns the dish that is on the menu for selected type 
-    this.getSelectedDish = function (type) {
+    this.getSelectedDish = function (id) {
         for (var i = 0; i < menu.length; i++)
-            if (menu[i].type == type)
+            if (menu[i].id == id)
                 return menu[i];
+    notifyObservers(id);
     }
 
     //Returns all the dishes on the menu.
@@ -62,13 +63,13 @@ var DinnerModel = function () {
     }
 
     //Returns all ingredients for all the dishes on the menu.
-    this.getAllIngredients = function () {
+    this.getAllIngredients = function (id) {
         var result = [];
         for (var i = 0; i < menu.length; i++)
             for (var j = 0; j < menu[i].ingredients.length; j++)
                 result.push(menu[i].ingredients[j]);
-
         return result;
+    notifyObservers(id);
     }
 
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -79,15 +80,17 @@ var DinnerModel = function () {
             tPrice += ingredients[i].price;
         }
         return (tPrice * guestCount);
+        notifyObservers();
     }
 
     this.getDishPrice = function (id) {
         var cost = 0;
-        var dish = this.getDish(id);
+        var getDish = this.getDish(id);
 
-        for (var j = 0; j < dish.ingredients.length; j++)
-            cost += (dish.ingredients[j].price);
+        for (var j = 0; j < getDish.ingredients.length; j++)
+            cost += (getDish.ingredients[j].price);
         return cost;
+        notifyObservers();
     }
 
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -95,32 +98,22 @@ var DinnerModel = function () {
     this.addDishToMenu = function (id) {
         var type;   
         var newDish;
-        var temp = [];
-        for (var i = 0; i < temp.length; i++) {
-            if (temp.id == id) {
-                type = temp[i].type;
-                newDish = temp[i];
-            }
+        for (var j = 0; j < newDish.length; j++) {
+            if (newDish[j].type == type)
+                newDish.splice(j, 1);
         }
-
-        for (var j = 0; j < temp.length; j++) {
-            if (temp[j].type == type)
-                temp.splice(j, 1);
-        }
-
-        temp.push(newDish);
+        getDish.push(newDish);
         notifyObservers();
     }
 
     //Removes dish from menu
     this.removeDishFromMenu = function (id) {
         for (var i = 0; i < menu.length; i++) {
-            dish = menu[i];
-            if (dish.id == id)
+            getDish = menu[i];
+            if (getDish.id == id)
                 menu.splice(i, 1);
         }
         notifyObservers();
-
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -154,4 +147,5 @@ var DinnerModel = function () {
                 notifyObservers(data);
                 }
         });
-    }   
+        }    
+}   
