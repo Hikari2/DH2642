@@ -15,6 +15,5 @@ var View_1Controller = function (mainCtrl, view, model) {
     }
     this.hide = function () {
         $("#view_1").hide();
-        $("#main").css("background-image", "none");
     }
 };

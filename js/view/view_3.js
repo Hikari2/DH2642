@@ -9,10 +9,22 @@ var View_3 = function (container, model) {
     this.typeSelector = container.find("#typeSelector");
     this.searchField = container.find("#searchField");
     this.searchButton = container.find("#searchButton");
+    
+    this.dishTable = container.find("#dishTable");
+    this.loadingLogo = container.find("#loadingLogo");
 
-    this.update = function (dishes) {
+    this.update = function (data, msg) {
         //http://api.bigoven.com/recipes?pg=1&rpp=50&any_kw=Main Dish&any_kw=&api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu
-        if (dishes != undefined) {
+
+        if (data == "error") {
+            $("#view_3 #dishTable").html("Something went wrong");
+        }
+
+        else if (data.ResultCount == 0)
+            $("#view_3 #dishTable").html("No results found");
+
+        else if ((dishes = data.Results) != undefined) {
+
             var i = 0;
             var row;
 
@@ -24,6 +36,8 @@ var View_3 = function (container, model) {
                     if (dishes[i * 4 + j] == undefined) {
                         row += "</tr>";
                         $("#view_3 #dishTable").append(row);
+                        this.dishTable.show();
+                        this.loadingLogo.hide();
                         return;
                     }
                     row += "<td><div class='col'><img  id='" + dishes[i * 4 + j].RecipeID + "' class='dishImage' src = " + dishes[i * 4 + j].ImageURL + ">";

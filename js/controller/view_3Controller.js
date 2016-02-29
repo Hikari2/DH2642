@@ -8,10 +8,14 @@ var View_3Controller = function (mainCtrl, view, model) {
     model.getAllDishes(view.typeSelector.val(), view.searchField.val());
 
     view.typeSelector.on('change', function () {
+        view.dishTable.hide();
+        view.loadingLogo.show();
         model.getAllDishes(view.typeSelector.val(), view.searchField.val());
     });
 
     view.searchButton.on("click", function () {
+        view.dishTable.hide();
+        view.loadingLogo.show();        
         model.getAllDishes(view.typeSelector.val(), view.searchField.val());
     });
 

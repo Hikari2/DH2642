@@ -13,7 +13,7 @@ var View_2 = function (container, model) {
 
         var guestCount = model.getNumberOfGuests();
         container.find("#totalGuests").html(guestCount);
-        
+
         var pendingDish = model.getPendingDish();
 
         $('#view_2 #menuTable').html(" ");
@@ -25,7 +25,8 @@ var View_2 = function (container, model) {
         for (var i = 0; i < menu.length; i++) {
             row = "<tr class='menuRow'>";
             row += "<td><p class='nameCol'>" + menu[i].name + "</p></td>";
-            row += "<td><p class='priceCol'>" + (model.getDishPrice(menu[i].id)  * guestCount).toFixed(1) + "</p></td>";
+            row += "<td><p class='priceCol'>";
+            row += (model.getDishPrice(menu[i].id) * guestCount).toFixed(1) + "</p></td>";
             row += "<td><img id='" + menu[i].id + "' class='cancelButton' src = images/cross.png></td>";
             row += "</tr>";
             $('#view_2 #menuTable').append(row);
