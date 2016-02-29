@@ -7,7 +7,6 @@ var View_6 = function (container, model) {
     model.addObserver(this);
     this.container = container;
     this.returnButton = container.find("#returnButton");
-
     this.update = function () {
 
         $('#view_6 #mealTable').html(" ");

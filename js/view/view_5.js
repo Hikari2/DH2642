@@ -37,7 +37,7 @@ var View_5 = function (container, model) {
         }
 
         row = "<div class=col-xs-1><h3>Total</h3>";
-        row += "<p><span>" + (total * guestCount).toFixed(1)+ "</span> SEK</p></div>";
+        row += "<p><span>" + (total * guestCount).toFixed(1) + "</span> SEK</p></div>";
         $('#view_5 #mid').append(row);
     }
 

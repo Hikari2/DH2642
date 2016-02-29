@@ -1,6 +1,7 @@
 $(function () {
     //We instantiate our model
     var model = new DinnerModel();
+    //model.addDishToMenu("167511");
 
     var view_1 = new View_1($("#view_1"), model);
     var view_2 = new View_2($("#view_2"), model);

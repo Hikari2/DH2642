@@ -20,9 +20,6 @@ var View_3 = function (container, model) {
             $("#view_3 #dishTable").html("Something went wrong");
         }
 
-        else if (data.ResultCount == 0)
-            $("#view_3 #dishTable").html("No results found");
-
         else if ((dishes = data.Results) != undefined) {
 
             var i = 0;

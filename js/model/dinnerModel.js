@@ -25,7 +25,7 @@ var DinnerModel = function () {
     this.setPendingDish = function (id)
     {
         pendingDish = id;
-        this.notifyObservers(id);
+        notifyObservers(id);
     }
 
     this.getPendingDish = function ()
@@ -36,12 +36,12 @@ var DinnerModel = function () {
     this.removePendingDish = function ()
     {
         pendingDish = undefined;
-        this.notifyObservers();
+        notifyObservers();
     }
 
     this.setNumberOfGuests = function (num) {
         guestCount = num;
-        this.notifyObservers();
+        notifyObservers();
     }
 
     // should return fl
@@ -93,7 +93,7 @@ var DinnerModel = function () {
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
-        var type;
+        var type;   
         var newDish;
 
         for (var i = 0; i < dishes.length; i++) {
@@ -107,8 +107,9 @@ var DinnerModel = function () {
             if (menu[j].type == type)
                 menu.splice(j, 1);
         }
+
         menu.push(newDish);
-        this.notifyObservers();
+        notifyObservers();
 
     }
 
@@ -119,7 +120,7 @@ var DinnerModel = function () {
             if (dish.id == id)
                 menu.splice(i, 1);
         }
-        this.notifyObservers();
+        notifyObservers();
 
     }
 
