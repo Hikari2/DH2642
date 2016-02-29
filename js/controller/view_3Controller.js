@@ -15,7 +15,7 @@ var View_3Controller = function (mainCtrl, view, model) {
 
     view.searchButton.on("click", function () {
         view.dishTable.hide();
-        view.loadingLogo.show();        
+        view.loadingLogo.show();
         model.getAllDishes(view.typeSelector.val(), view.searchField.val());
     });
 
@@ -39,10 +39,10 @@ var View_3Controller = function (mainCtrl, view, model) {
     });
 
     this.show = function () {
-        $("#view_3").show();
+        view.container.show();
     }
     this.hide = function () {
-        $("#view_3").hide();
+        view.container.hide();
     }
 };
 

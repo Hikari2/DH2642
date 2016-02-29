@@ -21,9 +21,9 @@ var View_2Controller = function (mainCtrl, view, model) {
     });
 
     this.show = function () {
-        $("#view_2").show();
+        view.container.show();
     }
     this.hide = function () {
-        $("#view_2").hide();
+        view.container.hide();
     }
 };

@@ -10,9 +10,9 @@ var View_6Controller = function (mainCtrl, view, model) {
     });
 
     this.show = function () {
-        $("#view_6").show();
+        view.container.show();
     }
     this.hide = function () {
-        $("#view_6").hide();
+        view.container.hide();
     }
 };

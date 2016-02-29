@@ -14,9 +14,9 @@ var View_5Controller = function (mainCtrl, view, model) {
     });
 
     this.show = function () {
-        $("#view_5").show();
+        view.container.show();
     }
     this.hide = function () {
-        $("#view_5").hide();
+        view.container.hide();
     }
 };
