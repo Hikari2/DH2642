@@ -12,44 +12,44 @@ var View_4 = function (container, model) {
     this.backButton = container.find("#backButton");
     this.confirmButton = container.find("#confirmButton");
 
-    this.update = function () {
+    this.update = function (obj) {
 
-        var guestCount = model.getNumberOfGuests();
-        container.find("#totalGuests").html(guestCount);
+        if (obj == "error") {
+            $("#view_3 #dishTable").html("Something went wrong");
+        }
 
-        var pendingDish = model.getPendingDish();
-        
-        if (pendingDish == undefined)
-            return;
-        
-        var dish = model.getDish(pendingDish);
+        else if (model.getPendingDish() != undefined) {
 
+            var guestCount = model.getNumberOfGuests();
+            container.find("#totalGuests").html(guestCount);
+            
+            dish = obj;
 
-        var iUrl = "images/" + dish.image;
-        $("#dishDetail").html("<h1>" + dish.name + "</h1>" + "<br><img src='" + iUrl + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
-        $("#dish-instructions").html(dish.description);
+            $("#dishDetail").html("<h1>" + dish.name + "</h1>" + "<br><img src='" + dish.ImageURL + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
+            $("#dish-instructions").html(dish.description);
 
-        $('#view_4 #ingredient-list').html(" ");
+            $('#view_4 #ingredient-list').html(" ");
 
-        var ingredients = dish.ingredients;
-        var row;
-        for (var i = 0; i < ingredients.length; i++) {
+            var ingredients = dish.Ingredients;
+            var row;
+            for (var i = 0; i < ingredients.length; i++) {
+                row = "<tr>";
+                row += "<td>" + (ingredients[i].quantity * guestCount).toFixed(1) + " " + ingredients[i].unit + "</td>";
+                row += "<td>" + ingredients[i].name + "</td>";
+                row += "<td>SEK</td>";
+                row += "<td>" + (ingredients[i].price * guestCount).toFixed(1) + "</td>";
+                row += "</tr>";
+                $('#view_4 #ingredient-list').append(row);
+            }
+
             row = "<tr>";
-            row += "<td>" + (ingredients[i].quantity * guestCount).toFixed(1) + " " + ingredients[i].unit + "</td>";
-            row += "<td>" + ingredients[i].name + "</td>";
+            row += "<td></td>";
+            row += "<td></td> ";
             row += "<td>SEK</td>";
-            row += "<td>" + (ingredients[i].price * guestCount).toFixed(1) + "</td>";
+            row += "";
+            row += "<td>" + model.getDishPrice(dish) * guestCount + "</td>";
             row += "</tr>";
             $('#view_4 #ingredient-list').append(row);
         }
-
-        row = "<tr>";
-        row += "<td></td>";
-        row += "<td></td> ";
-        row += "<td>SEK</td>";
-        row += "";
-        row += "<td>" + model.getDishPrice(dish.id) * guestCount + "</td>";
-        row += "</tr>";
-        $('#view_4 #ingredient-list').append(row);
     }
 }

@@ -13,14 +13,13 @@ var View_3 = function (container, model) {
     this.dishTable = container.find("#dishTable");
     this.loadingLogo = container.find("#loadingLogo");
 
-    this.update = function (data, msg) {
-        //http://api.bigoven.com/recipes?pg=1&rpp=50&any_kw=Main Dish&any_kw=&api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu
-
-        if (data == "error") {
+    this.update = function (obj) {
+        
+        if (obj == "error") {
             $("#view_3 #dishTable").html("Something went wrong");
         }
 
-        else if ((dishes = data.Results) != undefined) {
+        else if ((dishes = obj.Results) != undefined) {
 
             var i = 0;
             var row;
