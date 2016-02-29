@@ -39,14 +39,12 @@ var DinnerModel = function () {
     this.removePendingDish = function ()
     {
         pendingDish = undefined;
-        notifyObservers();
     }
     
 
 
     this.setNumberOfGuests = function (num) {
         guestCount = num;
-        notifyObservers();
     }
 
     // should return fl
@@ -59,7 +57,6 @@ var DinnerModel = function () {
         for (var i = 0; i < menu.length; i++)
             if (menu[i].id == id)
                 return menu[i];
-        notifyObservers(id);
     }
 
     //Returns all the dishes on the menu.
