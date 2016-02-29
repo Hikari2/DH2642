@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 var View_4 = function (container, model) {
 
     model.addObserver(this);
@@ -25,8 +24,8 @@ var View_4 = function (container, model) {
             
             dish = obj;
 
-            $("#dishDetail").html("<h1>" + dish.name + "</h1>" + "<br><img src='" + dish.ImageURL + "' height='280' width='280'><br><br><p>" + dish.description + "</p>");
-            $("#dish-instructions").html(dish.description);
+            $("#dishDetail").html("<h1>" + dish.Title + "</h1>" + "<br><img src='" + dish.ImageURL + "' height='280' width='280'><br><br><p>" + dish.Description + "</p>");
+            $("#dish-instructions").html(dish.PreparationNotes);
 
             $('#view_4 #ingredient-list').html(" ");
 
@@ -34,8 +33,8 @@ var View_4 = function (container, model) {
             var row;
             for (var i = 0; i < ingredients.length; i++) {
                 row = "<tr>";
-                row += "<td>" + (ingredients[i].quantity * guestCount).toFixed(1) + " " + ingredients[i].unit + "</td>";
-                row += "<td>" + ingredients[i].name + "</td>";
+                row += "<td>" + (ingredients[i].Quantity * guestCount).toFixed(1) + " " + ingredients[i].Unit + "</td>";
+                row += "<td>" + ingredients[i].Name + "</td>";
                 row += "<td>SEK</td>";
                 row += "<td>" + (ingredients[i].price * guestCount).toFixed(1) + "</td>";
                 row += "</tr>";

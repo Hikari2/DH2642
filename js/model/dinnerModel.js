@@ -25,10 +25,10 @@ var DinnerModel = function () {
 
 
 
-    this.setPendingDish = function (id)
+    this.setPendingDish = function (RecipeID)
     {
-        pendingDish = id;
-        this.getDish(id);
+        pendingDish = RecipeID;
+        this.getDish(RecipeID);
     }
 
     this.getPendingDish = function ()
@@ -53,9 +53,9 @@ var DinnerModel = function () {
     }
 
     //Returns the dish that is on the menu for selected type 
-    this.getSelectedDish = function (id) {
+    this.getSelectedDish = function (RecipeID) {
         for (var i = 0; i < menu.length; i++)
-            if (menu[i].id == id)
+            if (menu[i].id == RecipeID)
                 return menu[i];
     }
 
@@ -65,7 +65,7 @@ var DinnerModel = function () {
     }
 
     //Returns all ingredients for all the dishes on the menu.
-    this.getAllIngredients = function (id) {
+    this.getAllIngredients = function () {
         
         var result = [];
         for (var i = 0; i < menu.length; i++)
@@ -108,10 +108,10 @@ var DinnerModel = function () {
     }
 
     //Removes dish from menu
-    this.removeDishFromMenu = function (id) {
+    this.removeDishFromMenu = function (RecipeID) {
 
         for (var i = 0; i < menu.length; i++) {
-            if (menu[i].IngredientID == id)
+            if (menu[i].IngredientID == RecipeID)
                 menu.splice(i, 1);
         }
     }
@@ -136,8 +136,8 @@ var DinnerModel = function () {
         });
     }
 
-    this.getDish = function (id) {
-        var url = "http://api.bigoven.com/recipe/" + id + "?api_key=" + apiKey;
+    this.getDish = function (RecipeID) {
+        var url = "http://api.bigoven.com/recipe/" + RecipeID + "?api_key=" + apiKey;
         $.ajax({
             type: "GET",
             dataType: 'json',
