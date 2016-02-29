@@ -95,22 +95,21 @@ var DinnerModel = function () {
     this.addDishToMenu = function (id) {
         var type;   
         var newDish;
-
-        for (var i = 0; i < dishes.length; i++) {
-            if (dishes[i].id == id) {
-                type = dishes[i].type;
-                newDish = dishes[i];
+        var temp = [];
+        for (var i = 0; i < temp.length; i++) {
+            if (temp.id == id) {
+                type = temp[i].type;
+                newDish = temp[i];
             }
         }
 
-        for (var j = 0; j < menu.length; j++) {
-            if (menu[j].type == type)
-                menu.splice(j, 1);
+        for (var j = 0; j < temp.length; j++) {
+            if (temp[j].type == type)
+                temp.splice(j, 1);
         }
 
-        menu.push(newDish);
+        temp.push(newDish);
         notifyObservers();
-
     }
 
     //Removes dish from menu
@@ -144,48 +143,15 @@ var DinnerModel = function () {
         });
     }
     
-    this.getDish = function (type, filter) {
-         var url = "http://api.bigoven.com/recipe/" + type + "?api_key=" + apiKey;
-         var dinnerModel = this;    
+    this.getDish = function (id) {
+         var url = "http://api.bigoven.com/recipe/" + id + "?api_key=" + apiKey;
          $.ajax({
-	        type: "GET",
-	        dataType: 'json',
-	        cache: true,
-	        url: url,
-	        success: function (data) {
-	        var dish = data;
-            	var recipe = {
-                            'id':dish.RecipeID,
-                            'name':dish.Title,
-                            'type':dish.Category,
-                            'image':dish.ImageURL,
-                            'description':dish.Description,
-                            'instruction':dish.Instructions,
-                            }
-
-		var result = [];
-		var tPrice = 0;
-
-		menu.Ingredients.forEach(function (ingredients) {
-                    var quantity = ingredients.Quantity;
-                    var price = quantity;
-                   tPrice += price;
-                    var ingredients = {
-                                    'name':ingredients.Name,
-                                    'quantity':quantity,
-                                    'unit':ingredients.Unit,
-                                    'price':price
-                                    }
-                    ingredients.push(ingredients);
-                });
-
-		recipe.ingredients = result;
-		recipe.price = tPrice;
-                
-		dinnerModel.notifyObservers(recipe);
-		currentDish = recipe;
-		return recipe;
-            }
-	    });
-	};
-    }
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                notifyObservers(data);
+                }
+        });
+    }   
