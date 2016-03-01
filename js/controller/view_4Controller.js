@@ -22,4 +22,9 @@ var View_4Controller = function (mainCtrl, view, model) {
     this.hide = function () {
         view.container.hide();
     }
+
+    this.showLoadingLogo = function () {
+        view.row.hide();
+        view.loadingLogo.show();
+    }
 };

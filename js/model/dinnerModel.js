@@ -6,9 +6,9 @@ var DinnerModel = function () {
     var pendingDish;
 
     var apiKey = "r02x0R09O76JMCMc4nuM0PJXawUHpBUL";
-    
+
     var observers = [];
-    
+
     var notifyObservers = function (obj)
     {
         for (var i = 0; i < observers.length; i++)
@@ -17,7 +17,6 @@ var DinnerModel = function () {
         }
     }
 
-    // Add new obs. to array
     this.addObserver = function (observer)
     {
         observers.push(observer);
@@ -25,10 +24,14 @@ var DinnerModel = function () {
 
 
 
-    this.setPendingDish = function (RecipeID)
+    this.setPendingDish = function (obj)
     {
-        pendingDish = RecipeID;
-        this.getDish(RecipeID);
+        pendingDish = obj;
+
+        if (pendingDish.RecipeID != undefined)
+            return;
+
+        this.getDish(obj);
     }
 
     this.getPendingDish = function ()
@@ -39,8 +42,9 @@ var DinnerModel = function () {
     this.removePendingDish = function ()
     {
         pendingDish = undefined;
+        notifyObservers();
     }
-    
+
 
 
     this.setNumberOfGuests = function (num) {
@@ -66,11 +70,11 @@ var DinnerModel = function () {
 
     //Returns all ingredients for all the dishes on the menu.
     this.getAllIngredients = function () {
-        
+
         var result = [];
         for (var i = 0; i < menu.length; i++)
-            for (var j = 0; j < menu[i].ingredients.length; j++)
-                result.push(menu[i].ingredients[j]);
+            for (var j = 0; j < menu[i].Ingredients.length; j++)
+                result.push(menu[i].Ingredients[j]);
         return result;
     }
 
@@ -80,7 +84,7 @@ var DinnerModel = function () {
         var ingredients = this.getAllIngredients();
 
         for (var i = 0; i < ingredients.length; i++) {
-            tPrice += ingredients[i].price;
+            tPrice += ingredients[i].Quantity;
         }
 
         return (tPrice * guestCount);
@@ -91,7 +95,7 @@ var DinnerModel = function () {
         var cost = 0;
 
         for (var i = 0; i < dish.Ingredients.length; i++)
-            cost += (dish.Ingredients[i].MetricQuantity);
+            cost += (dish.Ingredients[i].Quantity);
 
         return cost;
     }
@@ -108,12 +112,13 @@ var DinnerModel = function () {
     }
 
     //Removes dish from menu
-    this.removeDishFromMenu = function (RecipeID) {
+    this.removeDishFromMenu = function (id) {
 
         for (var i = 0; i < menu.length; i++) {
-            if (menu[i].IngredientID == RecipeID)
+            if (menu[i].RecipeID == id)
                 menu.splice(i, 1);
         }
+        notifyObservers();  
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -151,4 +156,4 @@ var DinnerModel = function () {
             }
         });
     }
-}   
+}

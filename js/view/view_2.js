@@ -10,7 +10,7 @@ var View_2 = function (container, model) {
     this.confirmButton = container.find("#confirmButton");
 
     this.update = function (obj) {
-/*
+
         var guestCount = model.getNumberOfGuests();
         container.find("#totalGuests").html(guestCount);
 
@@ -40,8 +40,7 @@ var View_2 = function (container, model) {
 
         this.totalCost = container.find("#totalCost");
 
-         this.totalCost.html(model.getTotalMenuPrice());
-         */
+         this.totalCost.html((model.getTotalMenuPrice()).toFixed(1));
         
     };
 

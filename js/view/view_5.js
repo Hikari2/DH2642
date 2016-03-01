@@ -24,16 +24,16 @@ var View_5 = function (container, model) {
         var row = "";
         for (var i = 0; i < menu.length; i++) {
             row = "<div class=col-xs-2>";
-            row += "<img src='" + "images/" + menu[i].image + "'>";
-            row += "<h1>" + menu[i].name + "</h1>";
-            row += "<p>" + (model.getDishPrice(menu[i].id) * guestCount).toFixed(1) + "<span> SEK</span></p>";
+            row += "<img src='" + menu[i].ImageURL + "'>";
+            row += "<h1>" + menu[i].Title + "</h1>";
+            row += "<p>" + (model.getDishPrice(menu[i]) * guestCount).toFixed(1) + "<span> SEK</span></p>";
             row += "</div>";
             $('#view_5 #mid').append(row);
         }
 
         var total = 0;
         for (var j = 0; j < menu.length; j++) {
-            total += model.getDishPrice(menu[j].id);
+            total += model.getDishPrice(menu[j]);
         }
 
         row = "<div class=col-xs-1><h3>Total</h3>";

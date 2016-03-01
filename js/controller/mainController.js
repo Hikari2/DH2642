@@ -3,7 +3,7 @@
  */
 
 
-var MainController = function (views, model) {
+var MainController = function (views, model, main) {
 
     var view_1Controller = new View_1Controller(this, views[0], model);
     var view_2Controller = new View_2Controller(this, views[1], model);
@@ -17,7 +17,8 @@ var MainController = function (views, model) {
     view_3Controller.hide();
     view_4Controller.hide();
     view_5Controller.hide();
-    view_6Controller.hide();    
+    view_6Controller.hide();
+
 
     //Show view 2 and 3
     this.showSelectDish = function () {
@@ -33,6 +34,7 @@ var MainController = function (views, model) {
     this.showDishDetail = function () {
         view_3Controller.hide();
         view_4Controller.show();
+        view_4Controller.showLoadingLogo();
     }
 
     //Show view 5
@@ -42,15 +44,14 @@ var MainController = function (views, model) {
         view_4Controller.hide();
         view_5Controller.show();
     }
-    
+
     //Show view 6 
     this.dinnerInstruction = function () {
         view_5Controller.hide();
         view_6Controller.show();
     }
 
-    
-    $("#main").on({
+    main.on({
         "mouseover": function (e) {
             if ($(e.target).is(":button")) {
                 $(e.target).css('background-color', '#ffb732');

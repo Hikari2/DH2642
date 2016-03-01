@@ -18,5 +18,5 @@ $(function () {
     views.push(view_5);
     views.push(view_6);
 
-    var mainController = new MainController(views, model);
+    var mainController = new MainController(views, model, $("#main"));
 });
