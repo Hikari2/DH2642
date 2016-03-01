@@ -28,8 +28,10 @@ var DinnerModel = function () {
     {
         pendingDish = obj;
 
-        if (pendingDish.RecipeID != undefined)
+        if (pendingDish.RecipeID != undefined) {
+            notifyObservers();
             return;
+        }
 
         this.getDish(obj);
     }
@@ -49,6 +51,7 @@ var DinnerModel = function () {
 
     this.setNumberOfGuests = function (num) {
         guestCount = num;
+        notifyObservers();
     }
 
     // should return fl
@@ -118,7 +121,7 @@ var DinnerModel = function () {
             if (menu[i].RecipeID == id)
                 menu.splice(i, 1);
         }
-        notifyObservers();  
+        notifyObservers();
     }
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")

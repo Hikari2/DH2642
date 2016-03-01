@@ -1,7 +1,8 @@
 
 #view_2{
     width: 20%;
-    height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 #view_2 #total{

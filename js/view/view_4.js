@@ -21,13 +21,11 @@ var View_4 = function (container, model) {
         }
 
         else if (model.getPendingDish() != undefined) {
-            
-            model.setPendingDish(obj);
 
             var guestCount = model.getNumberOfGuests();
             container.find("#totalGuests").html(guestCount);
 
-            dish = obj;
+            dish = model.getPendingDish();
 
             $("#dishDetail").html("<h1>" + dish.Title + "</h1>" + "<br><img src='" + dish.ImageURL + "' height='280' width='280'><br><br><p>" + dish.Description + "</p>");
             $("#dish-instructions").html(dish.Description);

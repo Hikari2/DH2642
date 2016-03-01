@@ -11,6 +11,9 @@ var View_2 = function (container, model) {
 
     this.update = function (obj) {
 
+        if (obj != undefined && obj.RecipeID != undefined)
+            model.setPendingDish(obj);
+
         var guestCount = model.getNumberOfGuests();
         container.find("#totalGuests").html(guestCount);
 
@@ -19,7 +22,7 @@ var View_2 = function (container, model) {
         $('#view_2 #menuTable').html(" ");
 
         var menu = model.getFullMenu();
-        
+
         var row = "<tr><th>Dish Name</th><th>Cost</th><th></th></tr>";
         $('#view_2 #menuTable').append(row);
 
@@ -33,15 +36,15 @@ var View_2 = function (container, model) {
             $('#view_2 #menuTable').append(row);
         }
 
-        if (pendingDish != undefined)
-            $('#view_2 #menuTable').append("<tr class='pendingDishRow' style='border: solid'><td><p>Pending</p></td><td><p class='priceCol'>" + (model.getDishPrice(obj) * guestCount).toFixed(1) + "</p></td><td></td></tr>");
+        if (pendingDish != undefined && pendingDish.RecipeID != undefined)
+            $('#view_2 #menuTable').append("<tr class='pendingDishRow' style='border: solid'><td><p>Pending</p></td><td><p class='priceCol'>" + (model.getDishPrice(pendingDish) * guestCount).toFixed(1) + "</p></td><td></td></tr>");
         else
             $('#view_2 #menuTable').append("<tr class='pendingDishRow'><td><p>Pending</p></td><td><p class='priceCol'></p></td><td></td></tr>");
 
         this.totalCost = container.find("#totalCost");
 
-         this.totalCost.html((model.getTotalMenuPrice()).toFixed(1));
-        
+        this.totalCost.html((model.getTotalMenuPrice()).toFixed(1));
+
     };
 
     this.update();
