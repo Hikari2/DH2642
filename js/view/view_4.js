@@ -17,7 +17,9 @@ var View_4 = function (container, model) {
     this.update = function (obj) {
 
         if (obj == "error") {
-            $("#view_3 #dishTable").html("Something went wrong");
+            this.row.html("Something went wrong");
+            this.row.show();
+            this.loadingLogo.hide();
         }
 
         else if (model.getPendingDish() != undefined) {

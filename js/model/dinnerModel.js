@@ -156,6 +156,7 @@ var DinnerModel = function () {
             },
             error: function (xhr, status, error) {
                 console.log(xhr);
+                notifyObservers("error");
             }
         });
     }

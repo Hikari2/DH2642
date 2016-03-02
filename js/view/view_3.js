@@ -17,6 +17,8 @@ var View_3 = function (container, model) {
 
         if (obj == "error") {
             this.dishTable.html("Something went wrong");
+            this.dishTable.show();
+            this.loadingLogo.hide();
         }
 
         else if (obj != undefined && (dishes = obj.Results) != undefined) {
